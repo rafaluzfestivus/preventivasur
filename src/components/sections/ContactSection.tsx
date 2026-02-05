@@ -81,14 +81,20 @@ export function ContactSection() {
                                     <input type="email" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all" placeholder="tu@email.com" />
                                 </div>
 
-                                <div>
-                                    <label className="block text-sm font-medium text-slate-700 mb-1">Tipo de Servicio</label>
-                                    <select className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white">
-                                        <option>Protección para Balcón</option>
-                                        <option>Protección para Ventanas</option>
-                                        <option>Protección para Gatos</option>
-                                        <option>Otro</option>
-                                    </select>
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label className="block text-sm font-medium text-slate-700 mb-1">Código Postal</label>
+                                        <input type="text" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all" placeholder="28000" />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-slate-700 mb-1">Tipo de Servicio</label>
+                                        <select className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white">
+                                            <option>Protección para Balcón</option>
+                                            <option>Protección para Ventanas</option>
+                                            <option>Protección para Gatos</option>
+                                            <option>Otro</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div>
