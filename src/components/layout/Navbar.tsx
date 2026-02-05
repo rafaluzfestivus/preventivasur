@@ -1,0 +1,115 @@
+"use client";
+
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { Menu, X, Phone, Shield } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+export function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    const navLinks = [
+        { name: "Inicio", href: "#hero" },
+        { name: "Servicios", href: "#servicios" },
+        { name: "Beneficios", href: "#beneficios" },
+        { name: "Galería", href: "#galeria" },
+        { name: "Contacto", href: "#contacto" },
+    ];
+
+    return (
+        <nav
+            className={`fixed w-full z-50 transition-all duration-300 ${scrolled
+                ? "bg-white/90 backdrop-blur-md shadow-md py-4"
+                : "bg-transparent py-6"
+                }`}
+        >
+            <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
+                {/* Logo */}
+                <Link href="/" className="flex items-center gap-2 group">
+                    <Image
+                        src="/Logo Preventiva.png"
+                        alt="PreventivaSur Logo"
+                        width={200}
+                        height={60}
+                        className="h-12 w-auto object-contain transition-all duration-300"
+                    />
+                </Link>
+
+                {/* Desktop Nav */}
+                <div className="hidden md:flex items-center gap-8">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            className={`font-medium text-sm transition-colors hover:text-blue-600 ${scrolled ? "text-gray-700" : "text-white/90 hover:text-white"
+                                }`}
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
+                    <Link
+                        href="#contacto"
+                        className="bg-blue-600 text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-blue-700 transition-all flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
+                    >
+                        <Phone className="w-4 h-4" />
+                        Llamar Ahora
+                    </Link>
+                </div>
+
+                {/* Mobile Menu Button */}
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className={`md:hidden p-2 rounded-lg ${scrolled ? "text-gray-900" : "text-white"
+                        }`}
+                >
+                    {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                </button>
+            </div>
+
+            {/* Mobile Menu */}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl"
+                    >
+                        <div className="flex flex-col p-4 space-y-4">
+                            {navLinks.map((link) => (
+                                <Link
+                                    key={link.name}
+                                    href={link.href}
+                                    onClick={() => setIsOpen(false)}
+                                    className="text-gray-700 font-medium hover:text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50"
+                                >
+                                    {link.name}
+                                </Link>
+                            ))}
+                            <div className="pt-4 border-t border-gray-100">
+                                <Link
+                                    href="#contacto"
+                                    onClick={() => setIsOpen(false)}
+                                    className="bg-blue-600 text-white w-full py-3 rounded-lg font-bold flex justify-center items-center gap-2 hover:bg-blue-700 transition-colors"
+                                >
+                                    <Phone className="w-5 h-5" />
+                                    Solicitar Presupuesto
+                                </Link>
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </nav>
+    );
+}
