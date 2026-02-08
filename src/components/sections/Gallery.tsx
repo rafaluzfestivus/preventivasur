@@ -6,12 +6,12 @@ import { motion } from "framer-motion";
 
 export function Gallery() {
     const projects = [
-        { id: 1, src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000&auto=format&fit=crop", cat: "Balcón" },
-        { id: 2, src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop", cat: "Terraza" },
-        { id: 3, src: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000&auto=format&fit=crop", cat: "Ventana" },
-        { id: 4, src: "https://images.unsplash.com/photo-1560448075-bb485b067938?q=80&w=1000&auto=format&fit=crop", cat: "Seguridad Infantil" },
-        { id: 5, src: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=1000&auto=format&fit=crop", cat: "Gatos" },
-        { id: 6, src: "https://images.unsplash.com/photo-1481253127861-534498168948?q=80&w=1000&auto=format&fit=crop", cat: "Escalera" },
+        { id: 1, src: "/img-1.jpg", cat: "Balcón" },
+        { id: 2, src: "/img-2.jpg", cat: "Terraza" },
+        { id: 3, src: "/img-3.jpg", cat: "Ventana" },
+        { id: 4, src: "/img-4.jpg", cat: "Estructura" },
+        { id: 5, src: "/img-5.jpg", cat: "Mascotas" },
+        { id: 6, src: "/img-6.jpg", cat: "Seguridad" },
     ];
 
     return (
@@ -50,7 +50,7 @@ export function Gallery() {
                 </div>
 
                 <div className="text-center mt-12">
-                    <a href="https://instagram.com" target="_blank" className="text-blue-600 font-semibold hover:underline">
+                    <a href="https://www.instagram.com/preventiva_sur/" target="_blank" className="text-blue-600 font-semibold hover:underline">
                         Ver más en Instagram &rarr;
                     </a>
                 </div>
