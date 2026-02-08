@@ -33,11 +33,10 @@ export function Hero() {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
                     >
-                        Protege a quienes <br />
+                        Redes de Protección en <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                            más amas
-                        </span>{" "}
-                        sin perder las vistas
+                            Madrid y Andalucía
+                        </span>
                     </motion.h1>
 
                     <motion.p
@@ -46,9 +45,8 @@ export function Hero() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed"
                     >
-                        Instalación profesional de <strong>Redes de Protección</strong> invisibles y de alta resistencia.
-                        La solución definitiva para la seguridad en balcones, ventanas y terrazas.
-                        Ideal para niños y gatos.
+                        Especialistas en la instalación de <strong>mallas de seguridad para balcones, ventanas y terrazas</strong>.
+                        Protección certificada para niños y gatos sin perder las vistas.
                     </motion.p>
 
                     <motion.div

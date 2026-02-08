@@ -26,9 +26,20 @@ export function ContactSection() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-xl mb-1">Llámanos</h3>
-                                    <a href="tel:+34615744742" className="text-slate-300 hover:text-white transition-colors text-lg">
-                                        615 744 742
-                                    </a>
+                                    <div className="flex flex-col gap-1">
+                                        <div className="flex flex-col">
+                                            <span className="text-xs text-blue-400 font-bold uppercase tracking-wider">Madrid</span>
+                                            <a href="tel:+34637003793" className="text-slate-300 hover:text-white transition-colors text-lg">
+                                                637 003 793
+                                            </a>
+                                        </div>
+                                        <div className="flex flex-col mt-2">
+                                            <span className="text-xs text-blue-400 font-bold uppercase tracking-wider">Andalucía</span>
+                                            <a href="tel:+34615744742" className="text-slate-300 hover:text-white transition-colors text-lg">
+                                                615 744 742
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 

@@ -61,8 +61,17 @@ export function Footer() {
                         <h3 className="font-bold text-white mb-6">Contacto</h3>
                         <ul className="space-y-4 text-sm">
                             <li className="flex items-start gap-3">
-                                <Phone className="w-5 h-5 text-blue-500 shrink-0" />
-                                <span>615 744 742</span>
+                                <Phone className="w-5 h-5 text-blue-500 shrink-0 mt-1" />
+                                <div className="flex flex-col gap-2">
+                                    <div>
+                                        <span className="text-xs text-slate-500 font-bold uppercase block">Madrid</span>
+                                        <a href="tel:+34637003793" className="hover:text-white transition-colors">637 003 793</a>
+                                    </div>
+                                    <div>
+                                        <span className="text-xs text-slate-500 font-bold uppercase block">Andalucía</span>
+                                        <a href="tel:+34615744742" className="hover:text-white transition-colors">615 744 742</a>
+                                    </div>
+                                </div>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 text-blue-500 shrink-0" />

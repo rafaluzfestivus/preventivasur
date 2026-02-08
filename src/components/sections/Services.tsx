@@ -7,32 +7,32 @@ export function Services() {
     const services = [
         {
             icon: <Dumbbell className="w-10 h-10 text-blue-500" />,
-            title: "Redes para Deportes",
+            title: "Redes Deportivas y Canchas",
             description: "Redes de protección para canchas, pistas, campos de futbol, arenas, gimnasio y demás.",
         },
         {
             icon: <Home className="w-10 h-10 text-blue-500" />,
-            title: "Redes para Terrazas",
+            title: "Mallas de Seguridad para Terrazas",
             description: "Seguridad y protección para sus terrazas y balcones sin cambios estéticos ni visuales. Mallas reforzadas especiales para mascotas. Evita el 'síndrome del paracaidista' y dales libertad segura.",
         },
         {
             icon: <Maximize className="w-10 h-10 text-blue-500" />,
-            title: "Redes para Ventanas",
+            title: "Redes de Protección para Ventanas",
             description: "Además de ofrecer seguridad tienen la ventaja de sustituir la necesidad del uso de rejas.",
         },
         {
             icon: <Shield className="w-10 h-10 text-blue-500" />,
-            title: "Redes para Escaleras",
+            title: "Seguridad Infantil en Escaleras",
             description: "Existen situaciones en las cuales la presencia de redes de protección para escaleras es necesaria para protección de niños y mayores.",
         },
         {
             icon: <Waves className="w-10 h-10 text-blue-500" />,
-            title: "Redes para Piscinas",
+            title: "Cercos y Redes para Piscinas",
             description: "Protección y seguridad de piscinas para poder disfrutar de su piscina con tranquilidad.",
         },
         {
             icon: <Bird className="w-10 h-10 text-blue-500" />,
-            title: "Redes para Palomas",
+            title: "Redes Anti-Palomas y Aves",
             description: "Proteje el interior de su inmueble contra palomas y otras aves indeseables.",
         },
     ];
