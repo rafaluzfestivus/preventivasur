@@ -33,9 +33,9 @@ export function Hero() {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
                     >
-                        Redes de Protección en <br />
+                        Redes de Protección <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                            Madrid y Andalucía
+                            para tu Hogar
                         </span>
                     </motion.h1>
 

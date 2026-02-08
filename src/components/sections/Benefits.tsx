@@ -12,7 +12,7 @@ export function Benefits() {
         "Material Ignífugo y No Tóxico.",
         "Instalación sin Obras molestas.",
         "Garantía de 2 años en materiales e instalación.",
-        "Servicio rápido en Madrid y Andalucía.",
+        "Servicio a nivel nacional.",
     ];
 
     return (
