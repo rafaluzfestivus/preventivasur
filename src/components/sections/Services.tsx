@@ -1,39 +1,39 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Home, Cat, Baby, Maximize, Shield, Hotel } from "lucide-react";
+import { Home, Maximize, Shield, Dumbbell, Waves, Bird } from "lucide-react";
 
 export function Services() {
     const services = [
         {
+            icon: <Dumbbell className="w-10 h-10 text-blue-500" />,
+            title: "Redes para Deportes",
+            description: "Redes de protección para canchas, pistas, campos de futbol, arenas, gimnasio y demás.",
+        },
+        {
             icon: <Home className="w-10 h-10 text-blue-500" />,
-            title: "Balcones y Terrazas",
-            description: "Disfruta de tu espacio exterior con total seguridad sin sacrificar las vistas ni la estética de tu fachada.",
+            title: "Redes para Terrazas",
+            description: "Seguridad y protección para sus terrazas y balcones sin cambios estéticos ni visuales. Mallas reforzadas especiales para mascotas. Evita el 'síndrome del paracaidista' y dales libertad segura.",
         },
         {
             icon: <Maximize className="w-10 h-10 text-blue-500" />,
-            title: "Ventanas",
-            description: "Protección adaptable a cualquier tipo de ventana: correderas, abatibles, oscilobatientes.",
-        },
-        {
-            icon: <Cat className="w-10 h-10 text-blue-500" />,
-            title: "Redes para Gatos",
-            description: "Mallas reforzadas especiales para mascotas. Evita el 'síndrome del paracaidista' y dales libertad segura.",
-        },
-        {
-            icon: <Baby className="w-10 h-10 text-blue-500" />,
-            title: "Seguridad Infantil",
-            description: "Tranquilidad total para padres. Nuestras redes soportan hasta 120kg/m², protegiendo a los más pequeños.",
+            title: "Redes para Ventanas",
+            description: "Además de ofrecer seguridad tienen la ventaja de sustituir la necesidad del uso de rejas.",
         },
         {
             icon: <Shield className="w-10 h-10 text-blue-500" />,
-            title: "Escaleras y Vacíos",
-            description: "Cubrimos huecos de escaleras, barandillas y zonas de riesgo interior con acabados impecables.",
+            title: "Redes para Escaleras",
+            description: "Existen situaciones en las cuales la presencia de redes de protección para escaleras es necesaria para protección de niños y mayores.",
         },
         {
-            icon: <Hotel className="w-10 h-10 text-blue-500" />,
-            title: "Comunidades y Hoteles",
-            description: "Soluciones a gran escala para edificios residenciales, hoteles y oficinas. Cumplimos normativas.",
+            icon: <Waves className="w-10 h-10 text-blue-500" />,
+            title: "Redes para Piscinas",
+            description: "Protección y seguridad de piscinas para poder disfrutar de su piscina con tranquilidad.",
+        },
+        {
+            icon: <Bird className="w-10 h-10 text-blue-500" />,
+            title: "Redes para Palomas",
+            description: "Proteje el interior de su inmueble contra palomas y otras aves indeseables.",
         },
     ];
 

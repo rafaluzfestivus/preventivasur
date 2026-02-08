@@ -5,19 +5,29 @@ import { Star, Quote } from "lucide-react";
 export function Testimonials() {
     const testimonials = [
         {
-            name: "María Garcia",
-            location: "Madrid",
-            text: "Excelente trabajo. La red es prácticamente invisible y me da mucha tranquilidad con mi hijo de 2 años. Muy profesionales y limpios en la instalación.",
+            name: "Teresa Roue",
+            location: "Málaga",
+            text: "La atención por WhatsApp muy rápida y efectiva, unos días después ya estaban instalandome la red. Los chicos que vinieron a instalar super amables, la red queda muy bien y mis gatos ya pueden hacer equilibrismo por la terraza tranquilamente :) Económicos y profesionales! Dejo fotitos *-*",
         },
         {
-            name: "Carlos Rodriguez",
-            location: "Barcelona",
-            text: "Necesitábamos proteger la terraza para nuestros gatos. La solución que nos dieron fue perfecta. Rápidos y eficientes. 100% recomendables.",
+            name: "Evelina Zikrach",
+            location: "Sevilla",
+            text: "La instalación fue de lujo, todo hecho con el máximo cuidado y diligencia. Queríamos una instalación de red sin techo en el patio delantero para que no se pudieran salir nuestros gatos y a la hora de la instalación se aseguraron de que no hubiera huecos ni posibles salidas. Los instaladores fueron muy puntuales y amables. En general muy contentos con el trato de la empresa, eficiencia y calidad. Además se desplazaron a Sevilla a pesar de estar en malaga, 10/10.",
         },
         {
-            name: "Ana Martínez",
-            location: "Valencia",
-            text: "Pedí varios presupuestos y PreventivaSur fue el más claro y profesional. El resultado final superó mis expectativas. No tapa nada las vistas.",
+            name: "Elena Jodar",
+            location: "Cliente Verificado",
+            text: "Difícil contacto telefónico pero magnífico contacto por whatsapp. Formales, profesionales y buen precio",
+        },
+        {
+            name: "Sergio Sánchez López",
+            location: "Cliente Verificado",
+            text: "Contentos con el trabajo , los trabajadores muy profesionales y muy apañados",
+        },
+        {
+            name: "Quiroyanna",
+            location: "Cliente Verificado",
+            text: "Encantada con el servicio. Vinieron a instalar una red de seguridad para mi bebé y fueron increíblemente atentos en todo momento. Se tomaron el tiempo necesario para asegurarse de que la red quedara perfectamente firme y bien colocada, revisando cada detalle y explicándome cómo quedaba todo. Me transmitieron mucha confianza y profesionalidad. Ahora puedo estar tranquila sabiendo que mi bebé está mucho más seguro. Los recomiendo 100 x 100 y sin duda volveré a llamarles para futuros trabajos. ¡Muchas gracias por el trabajo tan cuidado!",
         },
     ];
 

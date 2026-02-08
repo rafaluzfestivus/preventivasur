@@ -21,9 +21,9 @@ export function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-400 text-sm font-semibold mb-6">
-                            <ShieldCheck className="w-4 h-4" />
-                            Seguridad Certificada Nº1 en España
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-400 text-base font-semibold mb-6">
+                            <ShieldCheck className="w-5 h-5" />
+                            Seguridad Certificada
                         </span>
                     </motion.div>
 
@@ -70,22 +70,6 @@ export function Hero() {
                         >
                             Ver Instalaciones
                         </Link>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 0.5 }}
-                        className="mt-12 flex items-center gap-8 text-sm text-slate-400"
-                    >
-                        <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-green-500" />
-                            <span>Instalación en 24/48h</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-green-500" />
-                            <span>Garantía de 5 años</span>
-                        </div>
                     </motion.div>
                 </div>
             </div>

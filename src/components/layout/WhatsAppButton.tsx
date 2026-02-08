@@ -26,7 +26,7 @@ export function WhatsAppButton() {
                     className="fixed bottom-6 right-6 z-50"
                 >
                     <Link
-                        href="https://wa.me/34600000000?text=Hola,%20quisiera%20más%20información%20sobre%20las%20redes%20de%20protección."
+                        href="https://wa.me/34615744742?text=Hola,%20quisiera%20más%20información%20sobre%20las%20redes%20de%20protección."
                         target="_blank"
                         className="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-green-500 rounded-full shadow-lg hover:shadow-green-500/30 hover:bg-green-600 transition-all hover:scale-110"
                         aria-label="Contactar por WhatsApp"

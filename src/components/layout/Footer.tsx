@@ -62,11 +62,11 @@ export function Footer() {
                         <ul className="space-y-4 text-sm">
                             <li className="flex items-start gap-3">
                                 <Phone className="w-5 h-5 text-blue-500 shrink-0" />
-                                <span>+34 600 000 000</span>
+                                <span>615 744 742</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 text-blue-500 shrink-0" />
-                                <span>contacto@preventivasur.es</span>
+                                <span>contacto@preventivasur.com</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 text-blue-500 shrink-0" />
@@ -79,9 +79,9 @@ export function Footer() {
                 <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
                     <p>&copy; {new Date().getFullYear()} PreventivaSur. Todos los derechos reservados.</p>
                     <div className="flex gap-6">
-                        <Link href="#" className="hover:text-white transition-colors">Aviso Legal</Link>
-                        <Link href="#" className="hover:text-white transition-colors">Política de Privacidad</Link>
-                        <Link href="#" className="hover:text-white transition-colors">Cookies</Link>
+                        <Link href="/politica-privacidad" className="hover:text-white transition-colors">Aviso Legal</Link>
+                        <Link href="/politica-privacidad" className="hover:text-white transition-colors">Política de Privacidad</Link>
+                        <Link href="/politica-privacidad" className="hover:text-white transition-colors">Cookies</Link>
                     </div>
                 </div>
             </div>

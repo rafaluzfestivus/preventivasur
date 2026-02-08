@@ -26,8 +26,8 @@ export function ContactSection() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-xl mb-1">Llámanos</h3>
-                                    <a href="tel:+34600000000" className="text-slate-300 hover:text-white transition-colors text-lg">
-                                        +34 600 000 000
+                                    <a href="tel:+34615744742" className="text-slate-300 hover:text-white transition-colors text-lg">
+                                        615 744 742
                                     </a>
                                 </div>
                             </div>
@@ -38,8 +38,8 @@ export function ContactSection() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-xl mb-1">Escríbenos</h3>
-                                    <a href="mailto:contacto@preventivasur.es" className="text-slate-300 hover:text-white transition-colors text-lg">
-                                        contacto@preventivasur.es
+                                    <a href="mailto:contacto@preventivasur.com" className="text-slate-300 hover:text-white transition-colors text-lg">
+                                        contacto@preventivasur.com
                                     </a>
                                 </div>
                             </div>

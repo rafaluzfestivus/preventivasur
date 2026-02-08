@@ -11,7 +11,7 @@ export function Benefits() {
         "Estética Invisible: No alteran la fachada ni las vistas.",
         "Material Ignífugo y No Tóxico.",
         "Instalación sin Obras molestas.",
-        "Garantía de 5 años en materiales e instalación.",
+        "Garantía de 2 años en materiales e instalación.",
     ];
 
     return (
