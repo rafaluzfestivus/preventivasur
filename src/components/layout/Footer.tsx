@@ -65,7 +65,10 @@ export function Footer() {
                                 <div className="flex flex-col gap-2">
                                     <div>
                                         <span className="text-xs text-slate-500 font-bold uppercase block">Madrid</span>
-                                        <a href="tel:+34637003793" className="hover:text-white transition-colors">637 003 793</a>
+                                        <div className="flex flex-col">
+                                            <a href="tel:+34637003793" className="hover:text-white transition-colors">Móvil: 637 003 793</a>
+                                            <a href="tel:+34912096117" className="hover:text-white transition-colors">Fijo: 91 209 61 17</a>
+                                        </div>
                                     </div>
                                     <div>
                                         <span className="text-xs text-slate-500 font-bold uppercase block">Andalucía</span>

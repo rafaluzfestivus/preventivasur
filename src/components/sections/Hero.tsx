@@ -11,7 +11,7 @@ export function Hero() {
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/40 z-10" />
                 {/* Replace with actual image */}
-                <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2700&auto=format&fit=crop')] bg-cover bg-center" />
+                <div className="w-full h-full bg-[url('/hero-new.jpg')] bg-cover bg-center" />
             </div>
 
             <div className="container mx-auto px-4 md:px-8 relative z-20 pt-20">
