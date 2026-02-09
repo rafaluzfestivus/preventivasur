@@ -18,7 +18,7 @@ export function Hero() {
                     playsInline
                     className="w-full h-full object-cover"
                 >
-                    <source src="/Create_a_subtle_202602091848_p9yjr.mp4" type="video/mp4" />
+                    <source src="/Create_a_subtle_202602091927_j7f3p.mp4" type="video/mp4" />
                 </video>
             </div>
 

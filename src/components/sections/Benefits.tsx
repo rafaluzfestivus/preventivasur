@@ -6,12 +6,12 @@ import { motion } from "framer-motion";
 
 export function Benefits() {
     const benefits = [
-        "Resistencia Certificada: Soportan hasta 120kg/m².",
+        "Resistencia Certificada: Soportan hasta 150kg/m².",
         "Tratamiento Anti-UV: Larga durabilidad expuestas al sol.",
         "Estética Invisible: No alteran la fachada ni las vistas.",
         "Material Ignífugo y No Tóxico.",
         "Instalación sin Obras molestas.",
-        "Garantía de 2 años en materiales e instalación.",
+        "Garantía de 3 años en materiales e instalación.",
         "Servicio a nivel nacional.",
     ];
 
