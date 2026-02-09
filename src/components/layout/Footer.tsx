@@ -74,6 +74,10 @@ export function Footer() {
                                         <span className="text-xs text-slate-500 font-bold uppercase block">Andalucía</span>
                                         <a href="tel:+34615744742" className="hover:text-white transition-colors">615 744 742</a>
                                     </div>
+                                    <div>
+                                        <span className="text-xs text-slate-500 font-bold uppercase block">Galicia</span>
+                                        <a href="tel:+351918179427" className="hover:text-white transition-colors">+351 918 179 427</a>
+                                    </div>
                                 </div>
                             </li>
                             <li className="flex items-center gap-3">

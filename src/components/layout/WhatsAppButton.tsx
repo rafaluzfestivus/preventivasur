@@ -19,6 +19,7 @@ export function WhatsAppButton() {
     const whatsappLinks = [
         { name: "Madrid", number: "34637003793", display: "637 003 793" },
         { name: "Andalucía", number: "34615744742", display: "615 744 742" },
+        { name: "Galicia", number: "351918179427", display: "+351 918 179 427" },
     ];
 
     return (

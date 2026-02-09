@@ -44,6 +44,12 @@ export function ContactSection() {
                                                 615 744 742
                                             </a>
                                         </div>
+                                        <div className="flex flex-col mt-2">
+                                            <span className="text-xs text-blue-400 font-bold uppercase tracking-wider">Galicia</span>
+                                            <a href="tel:+351918179427" className="text-slate-300 hover:text-white transition-colors text-lg">
+                                                +351 918 179 427
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
