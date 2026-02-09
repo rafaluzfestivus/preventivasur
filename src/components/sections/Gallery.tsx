@@ -50,7 +50,7 @@ export function Gallery() {
                 </div>
 
                 <div className="text-center mt-12">
-                    <a href="https://www.instagram.com/preventiva_sur/" target="_blank" className="text-blue-600 font-semibold hover:underline">
+                    <a href="https://www.instagram.com/preventiva_sur/" target="_blank" className="text-yellow-600 font-semibold hover:underline">
                         Ver más en Instagram &rarr;
                     </a>
                 </div>

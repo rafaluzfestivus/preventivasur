@@ -33,17 +33,9 @@ export function Navbar() {
                 : "bg-transparent py-6"
                 }`}
         >
-            <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
+            <div className="container mx-auto px-4 md:px-8 flex items-center justify-center relative">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 group">
-                    <Image
-                        src="/Logo Preventiva.png"
-                        alt="PreventivaSur Logo"
-                        width={200}
-                        height={60}
-                        className="h-12 w-auto object-contain transition-all duration-300"
-                    />
-                </Link>
+
 
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center gap-8">
@@ -51,7 +43,7 @@ export function Navbar() {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className={`font-medium text-sm transition-colors hover:text-blue-600 ${scrolled ? "text-gray-700" : "text-white/90 hover:text-white"
+                            className={`font-bold text-base tracking-wide transition-colors hover:text-yellow-400 ${scrolled ? "text-[#4d2a36]" : "text-white drop-shadow-md hover:text-yellow-300"
                                 }`}
                         >
                             {link.name}
@@ -59,7 +51,7 @@ export function Navbar() {
                     ))}
                     <Link
                         href="#contacto"
-                        className="bg-blue-600 text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-blue-700 transition-all flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
+                        className="bg-yellow-500 text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-yellow-600 transition-all flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
                     >
                         <Phone className="w-4 h-4" />
                         Llamar Ahora
@@ -69,7 +61,7 @@ export function Navbar() {
                 {/* Mobile Menu Button */}
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className={`md:hidden p-2 rounded-lg ${scrolled ? "text-gray-900" : "text-white"
+                    className={`md:hidden p-2 rounded-lg absolute left-4 ${scrolled ? "text-[#4d2a36]" : "text-white"
                         }`}
                 >
                     {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -91,7 +83,7 @@ export function Navbar() {
                                     key={link.name}
                                     href={link.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="text-gray-700 font-medium hover:text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50"
+                                    className="text-gray-700 font-medium hover:text-yellow-500 px-4 py-2 rounded-lg hover:bg-yellow-50"
                                 >
                                     {link.name}
                                 </Link>
@@ -100,7 +92,7 @@ export function Navbar() {
                                 <Link
                                     href="#contacto"
                                     onClick={() => setIsOpen(false)}
-                                    className="bg-blue-600 text-white w-full py-3 rounded-lg font-bold flex justify-center items-center gap-2 hover:bg-blue-700 transition-colors"
+                                    className="bg-yellow-500 text-white w-full py-3 rounded-lg font-bold flex justify-center items-center gap-2 hover:bg-yellow-600 transition-colors"
                                 >
                                     <Phone className="w-5 h-5" />
                                     Solicitar Presupuesto

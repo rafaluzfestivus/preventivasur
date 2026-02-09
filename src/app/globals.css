@@ -1,9 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 55, 65, 81;
+  /* Gray-700 #374151 */
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 249, 250, 251;
+  /* Gray-50 #F9FAFB */
+
+  /* New Semantic Colors */
+  --color-primary: #EAB308;
+  /* Yellow-500 */
+  --color-secondary: #4d2a36;
+  /* Custom Wine */
+  --color-text-main: #374151;
+  /* Gray-700 */
+  /* Gray-700 */
+  --color-text-light: #F3F4F6;
+  /* Gray-100 */
 }
 
 @media (prefers-color-scheme: dark) {

@@ -6,32 +6,32 @@ import { Home, Maximize, Shield, Dumbbell, Waves, Bird } from "lucide-react";
 export function Services() {
     const services = [
         {
-            icon: <Dumbbell className="w-10 h-10 text-blue-500" />,
+            icon: <Dumbbell className="w-10 h-10 text-yellow-500" />,
             title: "Redes Deportivas y Canchas",
             description: "Redes de protección para canchas, pistas, campos de futbol, arenas, gimnasio y demás.",
         },
         {
-            icon: <Home className="w-10 h-10 text-blue-500" />,
+            icon: <Home className="w-10 h-10 text-yellow-500" />,
             title: "Mallas de Seguridad para Terrazas",
             description: "Seguridad y protección para sus terrazas y balcones sin cambios estéticos ni visuales. Mallas reforzadas especiales para mascotas. Evita el 'síndrome del paracaidista' y dales libertad segura.",
         },
         {
-            icon: <Maximize className="w-10 h-10 text-blue-500" />,
+            icon: <Maximize className="w-10 h-10 text-yellow-500" />,
             title: "Redes de Protección para Ventanas",
             description: "Además de ofrecer seguridad tienen la ventaja de sustituir la necesidad del uso de rejas.",
         },
         {
-            icon: <Shield className="w-10 h-10 text-blue-500" />,
+            icon: <Shield className="w-10 h-10 text-yellow-500" />,
             title: "Seguridad Infantil en Escaleras",
             description: "Existen situaciones en las cuales la presencia de redes de protección para escaleras es necesaria para protección de niños y mayores.",
         },
         {
-            icon: <Waves className="w-10 h-10 text-blue-500" />,
+            icon: <Waves className="w-10 h-10 text-yellow-500" />,
             title: "Cercos y Redes para Piscinas",
             description: "Protección y seguridad de piscinas para poder disfrutar de su piscina con tranquilidad.",
         },
         {
-            icon: <Bird className="w-10 h-10 text-blue-500" />,
+            icon: <Bird className="w-10 h-10 text-yellow-500" />,
             title: "Redes Anti-Palomas y Aves",
             description: "Proteje el interior de su inmueble contra palomas y otras aves indeseables.",
         },
@@ -59,10 +59,10 @@ export function Services() {
                             viewport={{ once: true }}
                             className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 group"
                         >
-                            <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
+                            <div className="bg-yellow-50 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-yellow-100 transition-colors">
                                 {service.icon}
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                            <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-yellow-600 transition-colors">
                                 {service.title}
                             </h3>
                             <p className="text-slate-600 leading-relaxed">

@@ -16,7 +16,7 @@ export function TrustBar() {
                         CE Certificado
                     </div>
                     <div className="font-bold text-xl text-gray-700">
-                        Garantía<span className="text-blue-600">Total</span>
+                        Garantía<span className="text-yellow-500">Total</span>
                     </div>
                 </div>
             </div>

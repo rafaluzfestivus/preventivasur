@@ -47,7 +47,7 @@ export function Testimonials() {
                             key={index}
                             className="min-w-[300px] md:min-w-[400px] bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all relative flex flex-col snap-center h-full"
                         >
-                            <Quote className="absolute top-6 right-6 w-8 h-8 text-blue-100 fill-blue-100" />
+                            <Quote className="absolute top-6 right-6 w-8 h-8 text-[#4d2a36]/10 fill-[#4d2a36]/10" />
                             <div className="flex text-yellow-400 mb-4 gap-1">
                                 {[1, 2, 3, 4, 5].map((s) => (
                                     <Star key={s} className="w-4 h-4 fill-yellow-400" />
@@ -59,7 +59,7 @@ export function Testimonials() {
                                 {t.text.length > 150 && (
                                     <button
                                         onClick={() => setSelectedTestimonial(t)}
-                                        className="text-blue-600 text-sm font-semibold mt-2 hover:underline focus:outline-none"
+                                        className="text-yellow-600 text-sm font-semibold mt-2 hover:underline focus:outline-none"
                                     >
                                         Ver más
                                     </button>
@@ -67,7 +67,7 @@ export function Testimonials() {
                             </div>
 
                             <div className="flex items-center gap-3 mt-auto pt-4 border-t border-gray-100">
-                                <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold shrink-0">
+                                <div className="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center text-white font-bold shrink-0">
                                     {t.name[0]}
                                 </div>
                                 <div className="overflow-hidden">
@@ -102,7 +102,7 @@ export function Testimonials() {
                         </p>
 
                         <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xl">
+                            <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center text-white font-bold text-xl">
                                 {selectedTestimonial.name[0]}
                             </div>
                             <div>

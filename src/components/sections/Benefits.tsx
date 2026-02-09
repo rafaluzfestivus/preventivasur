@@ -21,12 +21,12 @@ export function Benefits() {
                 <div className="flex flex-col lg:flex-row items-center gap-16">
                     {/* Content */}
                     <div className="lg:w-1/2">
-                        <span className="text-blue-600 font-bold tracking-wider text-sm uppercase mb-2 block">
+                        <span className="text-yellow-500 font-bold tracking-wider text-sm uppercase mb-2 block">
                             Por Qué Elegirnos
                         </span>
                         <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
                             Seguridad que no se ve, <br />
-                            <span className="text-blue-600">tranquilidad que se siente</span>
+                            <span className="text-yellow-500">tranquilidad que se siente</span>
                         </h2>
                         <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                             Nuestras redes de polietileno de alta tenacidad son la opción preferida por familias y arquitectos. Combinan la máxima seguridad técnica con un impacto visual mínimo.

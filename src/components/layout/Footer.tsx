@@ -4,7 +4,7 @@ import { Shield, Facebook, Instagram, Phone, Mail, MapPin } from "lucide-react";
 
 export function Footer() {
     return (
-        <footer className="bg-slate-900 text-slate-300 pt-16 pb-8">
+        <footer className="bg-[#4d2a36] text-gray-300 pt-16 pb-8">
             <div className="container mx-auto px-4 md:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                     {/* Brand */}
@@ -23,10 +23,10 @@ export function Footer() {
                             Seguridad certificada para balcones, ventanas, terrazas, niños y mascotas.
                         </p>
                         <div className="flex gap-4 pt-2">
-                            <a href="#" className="hover:text-blue-500 transition-colors">
+                            <a href="#" className="hover:text-yellow-400 transition-colors">
                                 <Facebook className="w-5 h-5" />
                             </a>
-                            <a href="https://www.instagram.com/preventiva_sur/" className="hover:text-pink-500 transition-colors" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.instagram.com/preventiva_sur/" className="hover:text-rose-500 transition-colors" target="_blank" rel="noopener noreferrer">
                                 <Instagram className="w-5 h-5" />
                             </a>
                         </div>
@@ -36,11 +36,11 @@ export function Footer() {
                     <div>
                         <h3 className="font-bold text-white mb-6">Enlaces Rápidos</h3>
                         <ul className="space-y-3 text-sm">
-                            <li><Link href="#servicios" className="hover:text-blue-500 transition-colors">Nuestros Servicios</Link></li>
-                            <li><Link href="#beneficios" className="hover:text-blue-500 transition-colors">Por Qué Elegirnos</Link></li>
-                            <li><Link href="#galeria" className="hover:text-blue-500 transition-colors">Galería de Proyectos</Link></li>
-                            <li><Link href="#faq" className="hover:text-blue-500 transition-colors">Preguntas Frecuentes</Link></li>
-                            <li><Link href="#contacto" className="hover:text-blue-500 transition-colors">Solicitar Presupuesto</Link></li>
+                            <li><Link href="#servicios" className="hover:text-yellow-400 transition-colors">Nuestros Servicios</Link></li>
+                            <li><Link href="#beneficios" className="hover:text-yellow-400 transition-colors">Por Qué Elegirnos</Link></li>
+                            <li><Link href="#galeria" className="hover:text-yellow-400 transition-colors">Galería de Proyectos</Link></li>
+                            <li><Link href="#faq" className="hover:text-yellow-400 transition-colors">Preguntas Frecuentes</Link></li>
+                            <li><Link href="#contacto" className="hover:text-yellow-400 transition-colors">Solicitar Presupuesto</Link></li>
                         </ul>
                     </div>
 
@@ -48,11 +48,11 @@ export function Footer() {
                     <div>
                         <h3 className="font-bold text-white mb-6">Protección Para</h3>
                         <ul className="space-y-3 text-sm">
-                            <li><Link href="#" className="hover:text-blue-500 transition-colors">Balcones e Terrazas</Link></li>
-                            <li><Link href="#" className="hover:text-blue-500 transition-colors">Ventanas</Link></li>
-                            <li><Link href="#" className="hover:text-blue-500 transition-colors">Escaleras y Áticos</Link></li>
-                            <li><Link href="#" className="hover:text-blue-500 transition-colors">Seguridad para Niños</Link></li>
-                            <li><Link href="#" className="hover:text-blue-500 transition-colors">Redes para Gatos</Link></li>
+                            <li><Link href="#" className="hover:text-yellow-400 transition-colors">Balcones e Terrazas</Link></li>
+                            <li><Link href="#" className="hover:text-yellow-400 transition-colors">Ventanas</Link></li>
+                            <li><Link href="#" className="hover:text-yellow-400 transition-colors">Escaleras y Áticos</Link></li>
+                            <li><Link href="#" className="hover:text-yellow-400 transition-colors">Seguridad para Niños</Link></li>
+                            <li><Link href="#" className="hover:text-yellow-400 transition-colors">Redes para Gatos</Link></li>
                         </ul>
                     </div>
 
@@ -61,10 +61,10 @@ export function Footer() {
                         <h3 className="font-bold text-white mb-6">Contacto</h3>
                         <ul className="space-y-4 text-sm">
                             <li className="flex items-start gap-3">
-                                <Phone className="w-5 h-5 text-blue-500 shrink-0 mt-1" />
+                                <Phone className="w-5 h-5 text-yellow-400 shrink-0 mt-1" />
                                 <div className="flex flex-col gap-2">
                                     <div>
-                                        <span className="text-xs text-slate-500 font-bold uppercase block">Madrid</span>
+                                        <span className="text-xs text-slate-400 font-bold uppercase block">Madrid</span>
                                         <div className="flex flex-col">
                                             <a href="tel:+34637003793" className="hover:text-white transition-colors">Móvil: 637 003 793</a>
                                             <a href="tel:+34912096117" className="hover:text-white transition-colors">Fijo: 91 209 61 17</a>
@@ -81,18 +81,18 @@ export function Footer() {
                                 </div>
                             </li>
                             <li className="flex items-center gap-3">
-                                <Mail className="w-5 h-5 text-blue-500 shrink-0" />
+                                <Mail className="w-5 h-5 text-yellow-400 shrink-0" />
                                 <span>contacto@preventivasur.com</span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <MapPin className="w-5 h-5 text-blue-500 shrink-0" />
+                                <MapPin className="w-5 h-5 text-yellow-400 shrink-0" />
                                 <span>Servicio en toda la<br />Península Ibérica.</span>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
                     <p>&copy; {new Date().getFullYear()} PreventivaSur. Todos los derechos reservados.</p>
                     <div className="flex gap-6">
                         <Link href="/politica-privacidad" className="hover:text-white transition-colors">Aviso Legal</Link>
