@@ -38,18 +38,7 @@ export function ContactSection() {
                                                 </a>
                                             </div>
                                         </div>
-                                        <div className="flex flex-col mt-2">
-                                            <span className="text-xs text-yellow-400 font-bold uppercase tracking-wider">Andalucía</span>
-                                            <a href="tel:+34615744742" className="text-slate-300 hover:text-white transition-colors text-lg">
-                                                615 744 742
-                                            </a>
-                                        </div>
-                                        <div className="flex flex-col mt-2">
-                                            <span className="text-xs text-yellow-400 font-bold uppercase tracking-wider">Galicia</span>
-                                            <a href="tel:+351918179427" className="text-slate-300 hover:text-white transition-colors text-lg">
-                                                +351 918 179 427
-                                            </a>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
