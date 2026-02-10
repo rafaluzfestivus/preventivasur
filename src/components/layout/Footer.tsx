@@ -11,8 +11,8 @@ export function Footer() {
                     <div className="space-y-4">
                         <Link href="/" className="inline-block relative">
                             <Image
-                                src="/Logo Preventiva.png"
-                                alt="PreventivaSur Logo"
+                                src="/logo-preventiva-centro.png"
+                                alt="Preventiva Centro Logo"
                                 width={180}
                                 height={50}
                                 className="h-14 w-auto object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
@@ -26,7 +26,7 @@ export function Footer() {
                             <a href="#" className="hover:text-yellow-400 transition-colors">
                                 <Facebook className="w-5 h-5" />
                             </a>
-                            <a href="https://www.instagram.com/preventiva_sur/" className="hover:text-rose-500 transition-colors" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.instagram.com/preventivacentro/" className="hover:text-rose-500 transition-colors" target="_blank" rel="noopener noreferrer">
                                 <Instagram className="w-5 h-5" />
                             </a>
                         </div>
@@ -75,7 +75,7 @@ export function Footer() {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 text-yellow-400 shrink-0" />
-                                <span>contacto@preventivasur.com</span>
+                                <span>contacto@preventivacentro.es</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 text-yellow-400 shrink-0" />
@@ -86,7 +86,7 @@ export function Footer() {
                 </div>
 
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-                    <p>&copy; {new Date().getFullYear()} PreventivaSur. Todos los derechos reservados.</p>
+                    <p>&copy; {new Date().getFullYear()} Preventiva Centro. Todos los derechos reservados.</p>
                     <div className="flex gap-6">
                         <Link href="/politica-privacidad" className="hover:text-white transition-colors">Aviso Legal</Link>
                         <Link href="/politica-privacidad" className="hover:text-white transition-colors">Política de Privacidad</Link>

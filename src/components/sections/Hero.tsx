@@ -88,8 +88,8 @@ export function Hero() {
                         className="mb-8 md:mb-0 order-1 md:order-2"
                     >
                         <Image
-                            src="/Logo Preventiva.png"
-                            alt="PreventivaSur Logo"
+                            src="/logo-preventiva-centro.png"
+                            alt="Preventiva Centro Logo"
                             width={500}
                             height={250}
                             className="h-32 md:h-64 w-auto object-contain brightness-0 invert drop-shadow-2xl"

@@ -49,8 +49,8 @@ export function ContactSection() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-xl mb-1">Escríbenos</h3>
-                                    <a href="mailto:contacto@preventivasur.com" className="text-slate-300 hover:text-white transition-colors text-lg">
-                                        contacto@preventivasur.com
+                                    <a href="mailto:contacto@preventivacentro.es" className="text-slate-300 hover:text-white transition-colors text-lg">
+                                        contacto@preventivacentro.es
                                     </a>
                                 </div>
                             </div>

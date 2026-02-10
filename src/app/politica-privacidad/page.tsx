@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Política de Privacidad | PreventivaSur',
-    description: 'Política de Privacidad y Protección de Datos de PreventivaSur.',
+    title: 'Política de Privacidad | Preventiva Centro',
+    description: 'Política de Privacidad y Protección de Datos de Preventiva Centro.',
 };
 
 export default function PrivacyPolicy() {
@@ -12,13 +12,13 @@ export default function PrivacyPolicy() {
 
             <div className="prose prose-lg max-w-none text-slate-700">
                 <p>
-                    En PreventivaSur, nos comprometemos a proteger y respetar su privacidad. Esta Política de Privacidad explica cómo recopilamos, utilizamos y protegemos sus datos personales de acuerdo con el Reglamento General de Protección de Datos (RGPD) de la Unión Europea y la legislación española vigente.
+                    En Preventiva Centro, nos comprometemos a proteger y respetar su privacidad. Esta Política de Privacidad explica cómo recopilamos, utilizamos y protegemos sus datos personales de acuerdo con el Reglamento General de Protección de Datos (RGPD) de la Unión Europea y la legislación española vigente.
                 </p>
 
                 <h2 className="text-2xl font-bold mt-8 mb-4 text-slate-900">1. Responsable del Tratamiento</h2>
                 <p>
-                    Los datos personales recabados a través de este sitio web son responsabilidad de PreventivaSur.<br />
-                    <strong>Correo electrónico de contacto:</strong> contacto@preventivasur.com<br />
+                    Los datos personales recabados a través de este sitio web son responsabilidad de Preventiva Centro.<br />
+                    <strong>Correo electrónico de contacto:</strong> contacto@preventivacentro.es<br />
                     <strong>Teléfono:</strong> 615 744 742<br />
                     Ubicación: España (Prestamos servicio en toda la Península).
                 </p>
@@ -57,7 +57,7 @@ export default function PrivacyPolicy() {
                     <li>Portabilidad de sus datos.</li>
                 </ul>
                 <p className="mt-4">
-                    Para ejercer estos derechos, puede enviar un correo electrónico a <strong>contacto@preventivasur.com</strong> indicando el derecho que desea ejercer.
+                    Para ejercer estos derechos, puede enviar un correo electrónico a <strong>contacto@preventivacentro.es</strong> indicando el derecho que desea ejercer.
                 </p>
 
                 <h2 className="text-2xl font-bold mt-8 mb-4 text-slate-900">6. Seguridad de los Datos</h2>
@@ -72,7 +72,7 @@ export default function PrivacyPolicy() {
 
                 <h2 className="text-2xl font-bold mt-8 mb-4 text-slate-900">8. Cambios en la Política de Privacidad</h2>
                 <p>
-                    PreventivaSur se reserva el derecho de modificar esta política para adaptarla a novedades legislativas o jurisprudenciales. Se recomienda su lectura periódica.
+                    Preventiva Centro se reserva el derecho de modificar esta política para adaptarla a novedades legislativas o jurisprudenciales. Se recomienda su lectura periódica.
                 </p>
 
                 <p className="text-sm text-slate-500 mt-12">

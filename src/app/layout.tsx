@@ -9,28 +9,28 @@ import { CookieConsent } from "@/components/layout/CookieConsent";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Instalación de Redes de Protección en Madrid | PreventivaSur",
+  title: "Instalación de Redes de Protección en Madrid | Preventiva Centro",
   description: "Especialistas en instalación de redes de protección para balcones, ventanas y terrazas en Madrid y alrededores. Resistencia de 150kg/m² y 3 años de garantía.",
-  keywords: ["redes de protección madrid", "mallas de seguridad madrid", "redes para balcones madrid", "redes para gatos madrid", "seguridad infantil ventanas", "instalación redes madrid", "mallas anticaídas", "protección terrazas", "móstoles", "leganés", "getafe", "alcorcón"],
-  authors: [{ name: "PreventivaSur" }],
+  keywords: ["redes de protección madrid", "mallas de seguridad madrid", "redes para balcones madrid", "redes para gatos madrid", "seguridad infantil ventanas", "instalación redes madrid", "mallas anticaídas", "protección terrazas", "móstoles", "leganés", "getafe", "alcorcón", "Preventiva Centro"],
+  authors: [{ name: "Preventiva Centro" }],
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: "https://preventivasur.com",
-    title: "PreventivaSur | Redes de Protección en Madrid",
+    url: "https://preventivacentro.es",
+    title: "Preventiva Centro | Redes de Protección en Madrid",
     description: "Instalación profesional de redes de protección y mallas de seguridad en Madrid. Protege a tus seres queridos sin sacrificar la estética.",
-    siteName: "PreventivaSur",
+    siteName: "Preventiva Centro",
     images: [
       {
-        url: "/Logo Preventiva.png",
+        url: "/logo-preventiva-centro.png",
         width: 800,
         height: 600,
-        alt: "Logo PreventivaSur",
+        alt: "Logo Preventiva Centro",
       },
     ],
   },
   alternates: {
-    canonical: "https://preventivasur.com",
+    canonical: "https://preventivacentro.es",
   },
   robots: {
     index: true,
@@ -46,8 +46,8 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
-    "name": "PreventivaSur",
-    "image": "https://preventivasur.com/Logo%20Preventiva.png",
+    "name": "Preventiva Centro",
+    "image": "https://preventivacentro.es/logo-preventiva-centro.png",
     "description": "Especialistas en instalación de redes de protección y mallas de seguridad para balcones, ventanas y terrazas en Madrid.",
     "address": {
       "@type": "PostalAddress",
@@ -55,8 +55,9 @@ export default function RootLayout({
       "addressRegion": "Madrid",
       "addressCountry": "ES"
     },
-    "url": "https://preventivasur.com",
+    "url": "https://preventivacentro.es",
     "telephone": "+34637003793",
+    "email": "contacto@preventivacentro.es",
     "priceRange": "$$",
     "areaServed": ["Madrid", "Comunidad de Madrid"],
     "openingHoursSpecification": {
