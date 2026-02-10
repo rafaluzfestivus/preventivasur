@@ -35,7 +35,10 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-  }
+  },
+  icons: {
+    icon: "/logo-preventiva-centro.png",
+  },
 };
 
 export default function RootLayout({
