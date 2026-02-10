@@ -63,6 +63,7 @@ export function Navbar() {
                     onClick={() => setIsOpen(!isOpen)}
                     className={`md:hidden p-2 rounded-lg absolute left-4 ${scrolled ? "text-[#4d2a36]" : "text-white"
                         }`}
+                    aria-label="Abrir menú"
                 >
                     {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                 </button>

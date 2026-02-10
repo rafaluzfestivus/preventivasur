@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://preventivasur.com/sitemap.xml',
+        sitemap: 'https://preventivacentro.es/sitemap.xml',
     }
 }

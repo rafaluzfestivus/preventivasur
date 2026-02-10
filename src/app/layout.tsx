@@ -11,8 +11,15 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Instalación de Redes de Protección en Madrid | Preventiva Centro",
   description: "Especialistas en instalación de redes de protección para balcones, ventanas y terrazas en Madrid y alrededores. Resistencia de 150kg/m² y 3 años de garantía.",
-  keywords: ["redes de protección madrid", "mallas de seguridad madrid", "redes para balcones madrid", "redes para gatos madrid", "seguridad infantil ventanas", "instalación redes madrid", "mallas anticaídas", "protección terrazas", "móstoles", "leganés", "getafe", "alcorcón", "Preventiva Centro"],
-  authors: [{ name: "Preventiva Centro" }],
+  keywords: ["redes de protección madrid", "mallas de seguridad madrid", "redes para balcones madrid", "redes para gatos madrid", "seguridad infantil ventanas", "instalación redes madrid", "mallas anticaídas", "protección terrazas", "móstoles", "leganés", "getafe", "alcorcón", "Preventiva Centro", "precio redes protección", "presupuesto mallas seguridad", "instaladores redes madrid"],
+  authors: [{ name: "Preventiva Centro", url: "https://preventivacentro.es" }],
+  creator: "Preventiva Centro",
+  publisher: "Preventiva Centro",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     type: "website",
     locale: "es_ES",
@@ -29,15 +36,33 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Preventiva Centro | Redes de Protección en Madrid",
+    description: "Instalación profesional de redes de protección y mallas de seguridad en Madrid.",
+    images: ["/logo-preventiva-centro.png"],
+  },
   alternates: {
     canonical: "https://preventivacentro.es",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   icons: {
     icon: "/logo-preventiva-centro.png",
+    shortcut: "/logo-preventiva-centro.png",
+    apple: "/logo-preventiva-centro.png",
+  },
+  verification: {
+    google: "verification_token", // Placeholder for actual token if available
   },
 };
 
