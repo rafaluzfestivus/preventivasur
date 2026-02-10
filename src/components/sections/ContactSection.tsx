@@ -27,16 +27,30 @@ export function ContactSection() {
         e.preventDefault();
         setStatus("loading");
 
+        const data = {
+            access_key: "26e44386-5cd3-4c4b-a373-01d28e40d700",
+            Nombre: formData.nombre,
+            Teléfono: formData.telefono,
+            Email: formData.email,
+            "Código Postal": formData.codigoPostal,
+            Servicio: formData.servicio,
+            message: formData.mensaje,
+            subject: "Nuevo mensaje desde Preventiva Centro"
+        };
+
         try {
-            const response = await fetch("https://hook.festivusia.com/webhook/emailpreventiva", {
+            const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    "Accept": "application/json"
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(data),
             });
 
-            if (response.ok) {
+            const result = await response.json();
+
+            if (response.status === 200) {
                 setStatus("success");
                 setFormData({
                     nombre: "",
@@ -47,9 +61,11 @@ export function ContactSection() {
                     mensaje: ""
                 });
             } else {
+                console.error(result);
                 setStatus("error");
             }
         } catch (error) {
+            console.error(error);
             setStatus("error");
         }
     };
