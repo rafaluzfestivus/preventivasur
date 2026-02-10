@@ -9,16 +9,16 @@ import { CookieConsent } from "@/components/layout/CookieConsent";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Instalación de Redes de Protección y Mallas de Seguridad | Madrid y Andalucía",
-  description: "Especialistas en instalación de redes de protección para balcones, ventanas y terrazas en Madrid y Andalucía. Seguridad certificada para niños y gatos. ¡Presupuesto gratis!",
-  keywords: ["redes de protección", "mallas de seguridad", "redes para balcones", "redes para gatos", "seguridad infantil ventanas", "instalación redes madrid", "instalación redes andalucía", "mallas anticaídas", "protección terrazas", "mallas seguridad gatos"],
+  title: "Instalación de Redes de Protección en Madrid | PreventivaSur",
+  description: "Especialistas en instalación de redes de protección para balcones, ventanas y terrazas en Madrid y alrededores. Resistencia de 150kg/m² y 3 años de garantía.",
+  keywords: ["redes de protección madrid", "mallas de seguridad madrid", "redes para balcones madrid", "redes para gatos madrid", "seguridad infantil ventanas", "instalación redes madrid", "mallas anticaídas", "protección terrazas", "móstoles", "leganés", "getafe", "alcorcón"],
   authors: [{ name: "PreventivaSur" }],
   openGraph: {
     type: "website",
     locale: "es_ES",
     url: "https://preventivasur.com",
-    title: "PreventivaSur | Redes de Protección en Madrid y Andalucía",
-    description: "Instalación profesional de redes de protección y mallas de seguridad. Protege a tus seres queridos sin sacrificar la estética.",
+    title: "PreventivaSur | Redes de Protección en Madrid",
+    description: "Instalación profesional de redes de protección y mallas de seguridad en Madrid. Protege a tus seres queridos sin sacrificar la estética.",
     siteName: "PreventivaSur",
     images: [
       {
@@ -48,15 +48,17 @@ export default function RootLayout({
     "@type": "HomeAndConstructionBusiness",
     "name": "PreventivaSur",
     "image": "https://preventivasur.com/Logo%20Preventiva.png",
-    "description": "Especialistas en instalación de redes de protección y mallas de seguridad para balcones, ventanas y terrazas en Madrid y Andalucía.",
+    "description": "Especialistas en instalación de redes de protección y mallas de seguridad para balcones, ventanas y terrazas en Madrid.",
     "address": {
       "@type": "PostalAddress",
+      "addressLocality": "Madrid",
+      "addressRegion": "Madrid",
       "addressCountry": "ES"
     },
     "url": "https://preventivasur.com",
-    "telephone": "+34615744742",
+    "telephone": "+34637003793",
     "priceRange": "$$",
-    "areaServed": ["Madrid", "Andalucía"],
+    "areaServed": ["Madrid", "Comunidad de Madrid"],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": [
