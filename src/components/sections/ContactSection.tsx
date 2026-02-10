@@ -1,8 +1,59 @@
 "use client";
 
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Loader2, CheckCircle, XCircle } from "lucide-react";
+import { useState } from "react";
 
 export function ContactSection() {
+    const [formData, setFormData] = useState({
+        nombre: "",
+        telefono: "",
+        email: "",
+        codigoPostal: "",
+        servicio: "Protección para Balcón",
+        mensaje: ""
+    });
+
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus("loading");
+
+        try {
+            const response = await fetch("https://hook.festivusia.com/webhook/emailpreventiva", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setStatus("success");
+                setFormData({
+                    nombre: "",
+                    telefono: "",
+                    email: "",
+                    codigoPostal: "",
+                    servicio: "Protección para Balcón",
+                    mensaje: ""
+                });
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            setStatus("error");
+        }
+    };
+
     return (
         <section id="contacto" className="py-20 bg-[#4d2a36] text-white">
             <div className="container mx-auto px-4 md:px-8">
@@ -72,56 +123,140 @@ export function ContactSection() {
 
                     {/* Form */}
                     <div className="lg:w-1/2">
-                        <form className="bg-white rounded-2xl p-8 shadow-2xl text-slate-900">
+                        <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-2xl text-slate-900">
                             <h3 className="text-2xl font-bold mb-6">Pedir Presupuesto</h3>
 
-                            <div className="space-y-4">
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <label className="block text-sm font-medium text-slate-700 mb-1">Nombre</label>
-                                        <input type="text" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all" placeholder="Tu nombre" />
+                            {status === "success" ? (
+                                <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center animate-in fade-in zoom-in duration-300">
+                                    <div className="flex justify-center mb-3">
+                                        <CheckCircle className="w-12 h-12 text-green-500" />
                                     </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-slate-700 mb-1">Teléfono</label>
-                                        <input type="tel" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all" placeholder="600 000 000" />
+                                    <h4 className="text-xl font-bold text-green-800 mb-2">¡Mensaje Enviado!</h4>
+                                    <p className="text-green-700">
+                                        Gracias por contactarnos. Te responderemos lo antes posible.
+                                    </p>
+                                    <button
+                                        type="button"
+                                        onClick={() => setStatus("idle")}
+                                        className="mt-4 text-green-600 hover:text-green-800 font-medium text-sm underline"
+                                    >
+                                        Enviar otro mensaje
+                                    </button>
+                                </div>
+                            ) : (
+                                <div className="space-y-4">
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">Nombre</label>
+                                            <input
+                                                type="text"
+                                                name="nombre"
+                                                value={formData.nombre}
+                                                onChange={handleChange}
+                                                required
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all"
+                                                placeholder="Tu nombre"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">Teléfono</label>
+                                            <input
+                                                type="tel"
+                                                name="telefono"
+                                                value={formData.telefono}
+                                                onChange={handleChange}
+                                                required
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all"
+                                                placeholder="600 000 000"
+                                            />
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div>
-                                    <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                                    <input type="email" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all" placeholder="tu@email.com" />
-                                </div>
-
-                                <div className="grid grid-cols-2 gap-4">
                                     <div>
-                                        <label className="block text-sm font-medium text-slate-700 mb-1">Código Postal</label>
-                                        <input type="text" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all" placeholder="28000" />
+                                        <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            required
+                                            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all"
+                                            placeholder="tu@email.com"
+                                        />
                                     </div>
+
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">Código Postal</label>
+                                            <input
+                                                type="text"
+                                                name="codigoPostal"
+                                                value={formData.codigoPostal}
+                                                onChange={handleChange}
+                                                required
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all"
+                                                placeholder="28000"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">Tipo de Servicio</label>
+                                            <select
+                                                name="servicio"
+                                                value={formData.servicio}
+                                                onChange={handleChange}
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all bg-white"
+                                            >
+                                                <option>Protección para Balcón</option>
+                                                <option>Protección para Ventanas</option>
+                                                <option>Protección para Gatos</option>
+                                                <option>Otro</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
                                     <div>
-                                        <label className="block text-sm font-medium text-slate-700 mb-1">Tipo de Servicio</label>
-                                        <select className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all bg-white">
-                                            <option>Protección para Balcón</option>
-                                            <option>Protección para Ventanas</option>
-                                            <option>Protección para Gatos</option>
-                                            <option>Otro</option>
-                                        </select>
+                                        <label className="block text-sm font-medium text-slate-700 mb-1">Mensaje</label>
+                                        <textarea
+                                            rows={4}
+                                            name="mensaje"
+                                            value={formData.mensaje}
+                                            onChange={handleChange}
+                                            required
+                                            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all resize-none"
+                                            placeholder="Cuéntanos más sobre lo que necesitas..."
+                                        ></textarea>
                                     </div>
+
+                                    {status === "error" && (
+                                        <div className="bg-red-50 text-red-600 p-3 rounded-lg flex items-center gap-2 text-sm">
+                                            <XCircle className="w-4 h-4 flex-shrink-0" />
+                                            Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.
+                                        </div>
+                                    )}
+
+                                    <button
+                                        type="submit"
+                                        disabled={status === "loading"}
+                                        className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-4 rounded-lg transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl mt-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                                    >
+                                        {status === "loading" ? (
+                                            <>
+                                                <Loader2 className="w-5 h-5 animate-spin" />
+                                                Enviando...
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Send className="w-5 h-5" />
+                                                Enviar Solicitud
+                                            </>
+                                        )}
+                                    </button>
+
+                                    <p className="text-center text-xs text-slate-500 mt-4">
+                                        Al enviar aceptas nuestra política de privacidad.
+                                    </p>
                                 </div>
-
-                                <div>
-                                    <label className="block text-sm font-medium text-slate-700 mb-1">Mensaje</label>
-                                    <textarea rows={4} className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all resize-none" placeholder="Cuéntanos más sobre lo que necesitas..."></textarea>
-                                </div>
-
-                                <button type="button" className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-4 rounded-lg transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl mt-2">
-                                    <Send className="w-5 h-5" />
-                                    Enviar Solicitud
-                                </button>
-
-                                <p className="text-center text-xs text-slate-500 mt-4">
-                                    Al enviar aceptas nuestra política de privacidad.
-                                </p>
-                            </div>
+                            )}
                         </form>
                     </div>
                 </div>
