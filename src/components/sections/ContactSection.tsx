@@ -39,14 +39,24 @@ export function ContactSection() {
         };
 
         try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                },
-                body: JSON.stringify(data),
-            });
+            const [response] = await Promise.all([
+                fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(data),
+                }),
+                fetch("https://hook.festivusia.com/webhook/emailpreventiva", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(data),
+                }).catch(err => console.error("Error sending to secondary webhook:", err))
+            ]);
 
             const result = await response.json();
 
