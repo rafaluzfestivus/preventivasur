@@ -48,7 +48,7 @@ export function ContactSection() {
                     },
                     body: JSON.stringify(data),
                 }),
-                fetch("https://hook.festivusia.com/webhook/emailpreventiva", {
+                fetch("https://fluxo.festivusia.com/webhook/emailpreventiva", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
