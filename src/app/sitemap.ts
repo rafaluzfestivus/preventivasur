@@ -9,6 +9,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1,
         },
         {
+            url: 'https://preventivacentro.es/proteccion',
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://preventivacentro.es/testes-certificaciones',
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
             url: 'https://preventivacentro.es/politica-privacidad',
             lastModified: new Date(),
             changeFrequency: 'yearly',

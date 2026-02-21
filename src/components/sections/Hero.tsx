@@ -55,8 +55,8 @@ export function Hero() {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0"
                         >
-                            Especialistas en la instalación de <strong>mallas de seguridad para balcones, ventanas y terrazas</strong>.
-                            Protección certificada para niños y gatos sin perder las vistas.
+                            Expertos en la instalación de <strong>redes de seguridad en Madrid, Móstoles, Fuenlabrada y Alcalá</strong>.
+                            Protección certificada para niños y gatos en balcones y ventanas sin perder las vistas.
                         </motion.p>
 
                         <motion.div
@@ -89,7 +89,7 @@ export function Hero() {
                     >
                         <Image
                             src="/logo-preventiva-centro.png"
-                            alt="Preventiva Centro Logo"
+                            alt="Preventiva Centro - Instalación de Redes en Madrid"
                             width={500}
                             height={250}
                             className="h-32 md:h-64 w-auto object-contain brightness-0 invert drop-shadow-2xl"
