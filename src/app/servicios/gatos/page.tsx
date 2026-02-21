@@ -46,7 +46,7 @@ export default function GatosPage() {
                             <span className="text-yellow-400">tus Gatos (Anti-Caídas)</span>
                         </h1>
                         <p className="text-xl text-slate-300 leading-relaxed mb-8">
-                            Dales la libertad de disfrutar del aire libre sin riesgos. Especialistas en redes invisibles de alta resistencia para felinos en toda Madrid.
+                            Dales la libertad de disfrutar del aire libre sin riesgos. Especialistas en redes de protección de alta resistencia para felinos en toda Madrid.
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <Link

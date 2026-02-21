@@ -46,7 +46,7 @@ export default function AvesPage() {
                             <span className="text-yellow-400">Solución Definitiva</span>
                         </h1>
                         <p className="text-xl text-slate-300 leading-relaxed mb-8">
-                            Protege tu salud y la limpieza de tu edificio. Instalamos sistemas de red casi invisibles que impiden el acceso de aves de forma definitiva.
+                            Protege tu salud y la limpieza de tu edificio. Instalamos sistemas de red casi imperceptibles que impiden el acceso de aves de forma definitiva.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <Link

@@ -55,7 +55,7 @@ export function Hero() {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0"
                         >
-                            Expertos en la instalación de <strong>redes de seguridad en Madrid, Móstoles, Fuenlabrada y Alcalá</strong>.
+                            Expertos en la instalación de <strong>redes de seguridad en toda la Comunidad de Madrid</strong>.
                             Protección certificada para niños y gatos en balcones y ventanas sin perder las vistas.
                         </motion.p>
 

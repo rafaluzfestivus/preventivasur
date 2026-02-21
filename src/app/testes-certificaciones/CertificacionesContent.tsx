@@ -23,7 +23,7 @@ export default function CertificacionesContent() {
         },
         {
             icon: <EyeOff className="w-12 h-12 text-yellow-500" />,
-            title: "Estética 'Invisible'",
+            title: "Impacto Visual Mínimo",
             text: "Con un grosor optimizado de 0.8mm a 1mm y nudos termosellados, nuestras redes ofrecen un impacto visual mínimo. Son aceptadas por la mayoría de las comunidades de vecinos en Madrid."
         }
     ];

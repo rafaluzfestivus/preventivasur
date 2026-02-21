@@ -14,7 +14,7 @@ export default function NinosPage() {
         {
             icon: <Home className="w-8 h-8 text-yellow-500" />,
             title: "Sustitución de Rejas",
-            description: "Olvídate de las pesadas y costosas rejas de hierro. Nuestras redes ofrecen la misma seguridad con una estética limpia e 'invisible'."
+            description: "Olvídate de las pesadas y costosas rejas de hierro. Nuestras redes ofrecen la misma seguridad con una estética limpia e 'discreta'."
         },
         {
             icon: <Info className="w-8 h-8 text-yellow-500" />,
@@ -62,7 +62,7 @@ export default function NinosPage() {
                         </div>
                         <div className="absolute -bottom-6 -right-6 bg-yellow-500 p-6 rounded-2xl shadow-xl text-[#4d2a36] font-bold">
                             <CheckCircle className="w-8 h-8 mb-2" />
-                            Protección Discreta <br /> e Invisible
+                            Protección Discreta <br /> e Segura
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@ export default function NinosPage() {
                 <div className="container mx-auto px-4 md:px-8 text-center max-w-3xl">
                     <h2 className="text-3xl font-bold text-slate-900 mb-12">Lo que dicen los padres en Madrid</h2>
                     <div className="bg-white p-8 rounded-3xl shadow-lg italic text-slate-700 text-lg">
-                        "Viviendo en un piso 12 con dos niños pequeños, la ansiedad era constante. Preventiva Centro instaló las redes en una mañana y el cambio en nuestra calidad de vida ha sido total. Son casi invisibles y muy seguras."
+                        "Viviendo en un piso 12 con dos niños pequeños, la ansiedad era constante. Preventiva Centro instaló las redes en una mañana y el cambio en nuestra calidad de vida ha sido total. Son casi imperceptibles y muy seguras."
                         <div className="mt-4 font-bold text-[#4d2a36] not-italic">— Familia Garzón, Barrio de Salamanca</div>
                     </div>
                 </div>

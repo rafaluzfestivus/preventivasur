@@ -135,7 +135,7 @@ export default function ProteccionContent() {
                                 </div>
                                 <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
                                     <h4 className="font-bold text-slate-900 mb-2">Sustitución de Rejas</h4>
-                                    <p className="text-sm text-slate-600">Estética limpia e "invisible" que sustituye las pesadas rejas de hierro.</p>
+                                    <p className="text-sm text-slate-600">Estética limpia e "discreta" que sustituye las pesadas rejas de hierro.</p>
                                 </div>
                                 <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
                                     <h4 className="font-bold text-slate-900 mb-2">Sin Aristas</h4>
@@ -168,7 +168,7 @@ export default function ProteccionContent() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#4d2a36]/40 to-transparent" />
                                 <div className="absolute bottom-10 left-10 right-10 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/20">
                                     <p className="text-slate-900 font-bold mb-1 italic">"Casi imperceptible para la vista, total protección para tus hijos."</p>
-                                    <span className="text-yellow-600 text-sm font-bold uppercase tracking-widest">Premium Invisible Mesh Spain</span>
+                                    <span className="text-yellow-600 text-sm font-bold uppercase tracking-widest">Premium Safety Mesh Spain</span>
                                 </div>
                             </div>
                         </div>
@@ -193,7 +193,7 @@ export default function ProteccionContent() {
                             </h2>
                             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                                 Evita el temido **"Síndrome del Paracaidista"**.
-                                Instalamos redes ultra-resistentes y anti-mordeduras en balcones de **Leganés, Alcorcón, Getafe y Móstoles**.
+                                Instalamos redes ultra-resistentes y anti-mordeduras en balcones de **toda la Comunidad de Madrid**.
                                 Diseñadas para que tus felinos disfruten de la brisa con total seguridad.
                             </p>
 
