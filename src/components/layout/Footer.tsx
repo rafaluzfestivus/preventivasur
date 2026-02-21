@@ -48,9 +48,9 @@ export function Footer() {
                     <div>
                         <h3 className="font-bold text-white mb-6">Protección Para</h3>
                         <ul className="space-y-3 text-sm">
-                            <li><Link href="/servicios/ninos" className="hover:text-yellow-400 transition-colors">Seguridad Infantil</Link></li>
-                            <li><Link href="/servicios/gatos" className="hover:text-yellow-400 transition-colors">Redes para Gatos</Link></li>
-                            <li><Link href="/servicios/aves" className="hover:text-yellow-400 transition-colors">Control de Aves (Palomas)</Link></li>
+                            <li><Link href="/proteccion#ninos" className="hover:text-yellow-400 transition-colors">Seguridad Infantil</Link></li>
+                            <li><Link href="/proteccion#gatos" className="hover:text-yellow-400 transition-colors">Redes para Gatos</Link></li>
+                            <li><Link href="/proteccion#aves" className="hover:text-yellow-400 transition-colors">Control de Aves (Palomas)</Link></li>
                             <li><Link href="/#servicios" className="hover:text-yellow-400 transition-colors">Terrazas y Balcones</Link></li>
                             <li><Link href="/#servicios" className="hover:text-yellow-400 transition-colors">Ventanas y Escaleras</Link></li>
                         </ul>

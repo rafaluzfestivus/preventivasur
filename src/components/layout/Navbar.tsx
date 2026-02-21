@@ -21,7 +21,7 @@ export function Navbar() {
     const navLinks = [
         { name: "Inicio", href: "/" },
         { name: "Certificaciones", href: "/testes-certificaciones" },
-        { name: "Gatos", href: "/servicios/gatos" },
+        { name: "Protección", href: "/proteccion" },
         { name: "Servicios", href: "/#servicios" },
         { name: "Contacto", href: "/#contacto" },
     ];
