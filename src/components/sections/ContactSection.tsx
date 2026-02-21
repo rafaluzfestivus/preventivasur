@@ -41,15 +41,14 @@ export function ContactSection() {
             subject: "Nuevo mensaje desde Preventiva Centro"
         };
 
-        const sheetsData = {
-            telefono: formData.telefono,
-            fonte: "form",
-            Nombre: formData.nombre,
-            email: formData.email,
-            cod_postal: formData.codigoPostal,
-            enviado_dt_hr: formattedDate,
-            Message: `[${formData.servicio}] ${formData.mensaje}`
-        };
+        const sheetsData = new URLSearchParams();
+        sheetsData.append("telefono", formData.telefono);
+        sheetsData.append("fonte", "form");
+        sheetsData.append("Nombre", formData.nombre);
+        sheetsData.append("email", formData.email);
+        sheetsData.append("cod_postal", formData.codigoPostal);
+        sheetsData.append("enviado_dt_hr", formattedDate);
+        sheetsData.append("Message", `[${formData.servicio}] ${formData.mensaje}`);
 
         try {
             const [response] = await Promise.all([
@@ -73,9 +72,9 @@ export function ContactSection() {
                     method: "POST",
                     mode: "no-cors",
                     headers: {
-                        "Content-Type": "text/plain",
+                        "Content-Type": "application/x-www-form-urlencoded",
                     },
-                    body: JSON.stringify(sheetsData),
+                    body: sheetsData.toString(),
                 }).catch(err => console.error("Error sending to Google Sheets:", err))
             ]);
 
