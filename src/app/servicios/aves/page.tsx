@@ -18,13 +18,13 @@ export default function AvesPage() {
         },
         {
             icon: <Sparkles className="w-8 h-8 text-yellow-500" />,
-            title: "Estética y Normativa",
-            description: "Prácticamente imperceptibles (color arena o negras de bajo grosor), cumpliendo con las normativas estéticas de las comunidades de vecinos de Madrid."
+            title: "Resistencia a la Corrosión",
+            description: "Nuestras redes están preparadas para resistir la acidez de los excrementos de las aves y las inclemencias del tiempo sin degradarse."
         },
         {
             icon: <Heart className="w-8 h-8 text-yellow-500" />,
-            title: "Solución Ética (Bird-Friendly)",
-            description: "Nuestras redes no dañan al animal, simplemente impiden su acceso. Es la solución preferida por su respeto a la fauna urbana."
+            title: "Estética y Normativa",
+            description: "Al ser de color arena o transparentes/negras de bajo grosor, son prácticamente imperceptibles, cumpliendo con las normativas de Madrid."
         }
     ];
 
@@ -79,18 +79,17 @@ export default function AvesPage() {
                         <div>
                             <h2 className="text-3xl font-bold text-slate-900 mb-6">El fin de las palomas en tu balcón</h2>
                             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                                En Madrid, o problema das pombas é quase uma praga urbana, especialmente em zonas como o Centro, Chamberí e Salamanca.
-                                O cliente aqui está desesperado porque já tentou de tudo (espetos, corujas de plástico, CD pendurado) e nada funcionou.
+                                Em Madrid, o problema das pombas é quase uma praga urbana, especialmente nos prédios mais antigos ou em zonas como o Centro, Chamberí e Salamanca. O cliente aqui está desesperado porque já tentou de tudo (espetos, corujas de plástico, CD pendurado) e nada funcionou.
                             </p>
                             <p className="text-lg text-slate-600 mb-8 leading-relaxed font-semibold italic">
-                                "Nuestras redes crean una barrera física real que soluciona el problema de raíz."
+                                "Nuestras redes crean un bloqueo físico que impide que las palomas aniden o se posen de forma definitiva."
                             </p>
                             <div className="bg-yellow-50 p-6 rounded-2xl border border-yellow-200">
                                 <h4 className="font-bold text-[#4d2a36] mb-2 flex items-center gap-2">
-                                    <CheckCircle className="w-5 h-5" /> Beneficio Adicional
+                                    <CheckCircle className="w-5 h-5" /> Higiene y Limpieza
                                 </h4>
                                 <p className="text-sm text-slate-700">
-                                    Al instalar nuestras redes, mantendrás tus equipos de aire acondicionado y ventanas limpias por mucho más tiempo, reduciendo costes de mantenimiento.
+                                    Al instalar nuestras redes, mantendrás tus equipos de aire acondicionado y ventanas limpios por mucho más tempo. Es la solución más ética y eficaz.
                                 </p>
                             </div>
                         </div>
@@ -128,13 +127,14 @@ export default function AvesPage() {
                         <div className="relative z-10">
                             <h2 className="text-4xl md:text-6xl font-bold mb-8 italic">¿Harto de las palomas?</h2>
                             <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto">
-                                Solicita un presupuesto gratuito para tu comunidad o vivienda particular. Instalamos en toda la Comunidad de Madrid de forma rápida y limpia.
+                                Presupuesto sin compromiso para comunidades y particulares. Acaba hoy con o problema das palomas.
                             </p>
                             <Link
-                                href="/#contacto"
+                                href="https://wa.me/34637003793"
+                                target="_blank"
                                 className="bg-yellow-500 text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-yellow-600 transition-all shadow-xl inline-block"
                             >
-                                Presupuesto Sin Compromiso Geral
+                                Solicitar Presupuesto por WhatsApp
                             </Link>
                         </div>
                         <Bird className="absolute -bottom-10 -right-10 w-64 h-64 text-white/5 rotate-12" />

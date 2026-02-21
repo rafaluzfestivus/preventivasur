@@ -9,7 +9,7 @@ export default function NinosPage() {
         {
             icon: <Shield className="w-8 h-8 text-yellow-500" />,
             title: "Resistencia Certificada",
-            description: "Nuestras redes soportan el peso y el impacto accidental de un niño, garantizando una barrera firme en ventanas y balcones."
+            description: "Nuestras redes soportan el peso y el impacto accidental de un niño, garantizando una barrera firme en todo momento."
         },
         {
             icon: <Home className="w-8 h-8 text-yellow-500" />,
@@ -19,7 +19,7 @@ export default function NinosPage() {
         {
             icon: <Info className="w-8 h-8 text-yellow-500" />,
             title: "Sin Aristas ni Peligros",
-            description: "A diferencia de otros sistemas, nuestras redes son suaves al tacto e imposibles de escalar, evitando cortes o atrapamientos."
+            description: "A diferencia de otros sistemas, nuestras redes são suaves al tacto e imposibles de escalar, evitando cortes ou atrapamientos."
         },
         {
             icon: <Clock className="w-8 h-8 text-yellow-500" />,
@@ -46,22 +46,23 @@ export default function NinosPage() {
                             <span className="text-yellow-400">Tranquilidad para los Padres</span>
                         </h1>
                         <p className="text-xl text-slate-300 leading-relaxed mb-8">
-                            Protege a los que más quieres con la solución más discreta y resistente del mercado. Seguridad certificada para ventanas, balcones y escaleras en Madrid.
+                            Protege a los que más quieres con la solución más discreta y resistente del mercado. Seguridad certificada para ventanas, balcones y escaleras.
                         </p>
                         <Link
-                            href="#contacto"
+                            href="https://wa.me/34637003793"
+                            target="_blank"
                             className="bg-yellow-500 text-white px-8 py-4 rounded-full font-bold inline-block hover:bg-yellow-600 transition-all shadow-lg transform hover:scale-105"
                         >
-                            Solicita una Visita Técnica Gratis
+                            Solicita una visita técnica gratuita en Madrid
                         </Link>
                     </motion.div>
                     <div className="lg:w-1/2 relative">
                         <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-200">
-                            <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=2678&auto=format&fit=crop')] bg-cover bg-center" />
+                            <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1542129596030-cf8d268d2a34?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center" />
                         </div>
                         <div className="absolute -bottom-6 -right-6 bg-yellow-500 p-6 rounded-2xl shadow-xl text-[#4d2a36] font-bold">
                             <CheckCircle className="w-8 h-8 mb-2" />
-                            Certificado por <br /> estándares europeos
+                            Protección Discreta <br /> e Invisible
                         </div>
                     </div>
                 </div>
@@ -91,8 +92,8 @@ export default function NinosPage() {
                                 </li>
                             </ul>
                             <div className="mt-10 p-6 bg-red-50 border-l-4 border-red-500 rounded-r-xl">
-                                <p className="text-red-700 italic font-medium">
-                                    "No esperes a que tu hijo empiece a gatear o escalar. Asegura tu hogar hoy mismo con Preventiva Centro."
+                                <p className="text-red-700 italic font-bold">
+                                    "No esperes a que tu hijo empiece a gatear o escalar. Asegura tu hogar hoy."
                                 </p>
                             </div>
                         </div>
@@ -134,17 +135,19 @@ export default function NinosPage() {
                     </p>
                     <div className="flex flex-col md:flex-row justify-center gap-6">
                         <Link
-                            href="tel:+34637003793"
+                            href="https://wa.me/34637003793"
+                            target="_blank"
                             className="bg-[#4d2a36] text-white px-10 py-5 rounded-full font-bold text-lg flex items-center justify-center gap-3 hover:bg-slate-800 transition-all shadow-xl"
                         >
                             <Phone className="w-6 h-6" />
-                            Llamar: 637 003 793
+                            Protege tu hogar hoy
                         </Link>
                         <Link
-                            href="/#contacto"
+                            href="https://wa.me/34637003793"
+                            target="_blank"
                             className="bg-yellow-500 text-white px-10 py-5 rounded-full font-bold text-lg flex items-center justify-center transition-all shadow-xl hover:bg-yellow-600"
                         >
-                            Solicitar Presupuesto Online
+                            Solicita una visita técnica gratuita
                         </Link>
                     </div>
                 </div>

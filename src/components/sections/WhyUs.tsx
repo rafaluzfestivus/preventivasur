@@ -6,11 +6,6 @@ import { ShieldCheck, UserCheck, Sparkles, Clock, FileCheck2 } from "lucide-reac
 export function WhyUs() {
     const reasons = [
         {
-            icon: <ShieldCheck className="w-8 h-8 text-yellow-500" />,
-            title: "Garantía Real de 3 Años",
-            description: "No es solo una promesa; es un compromiso por escrito. Si el sol de Madrid daña la red, la cambiamos sin coste.",
-        },
-        {
             icon: <UserCheck className="w-8 h-8 text-yellow-500" />,
             title: "Instaladores Propios",
             description: "No subcontratamos. Nuestro personal está especializado exclusivamente en redes de alta seguridad.",
