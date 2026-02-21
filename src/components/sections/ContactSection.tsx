@@ -27,6 +27,9 @@ export function ContactSection() {
         e.preventDefault();
         setStatus("loading");
 
+        const now = new Date();
+        const formattedDate = `${now.getDate().toString().padStart(2, '0')}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getFullYear()} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+
         const data = {
             access_key: "26e44386-5cd3-4c4b-a373-01d28e40d700",
             Nombre: formData.nombre,
@@ -36,6 +39,16 @@ export function ContactSection() {
             Servicio: formData.servicio,
             message: formData.mensaje,
             subject: "Nuevo mensaje desde Preventiva Centro"
+        };
+
+        const sheetsData = {
+            telefono: formData.telefono,
+            fonte: "form",
+            Nombre: formData.nombre,
+            email: formData.email,
+            cod_postal: formData.codigoPostal,
+            enviado_dt_hr: formattedDate,
+            Message: `[${formData.servicio}] ${formData.mensaje}`
         };
 
         try {
@@ -55,7 +68,15 @@ export function ContactSection() {
                         "Accept": "application/json"
                     },
                     body: JSON.stringify(data),
-                }).catch(err => console.error("Error sending to secondary webhook:", err))
+                }).catch(err => console.error("Error sending to secondary webhook:", err)),
+                fetch("https://script.google.com/macros/s/AKfycbzQcpR7ORaX81o9dfM5vcpo3PHM9S-irh9OweviOgwAeZ7-4V0WYGCRG_AN-EZSQj6g/exec", {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: {
+                        "Content-Type": "text/plain",
+                    },
+                    body: JSON.stringify(sheetsData),
+                }).catch(err => console.error("Error sending to Google Sheets:", err))
             ]);
 
             const result = await response.json();
