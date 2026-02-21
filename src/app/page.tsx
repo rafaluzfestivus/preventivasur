@@ -5,6 +5,7 @@ import { Benefits } from "@/components/sections/Benefits";
 import { Gallery } from "@/components/sections/Gallery";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { WhyUs } from "@/components/sections/WhyUs";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <TrustBar />
       <Services />
       <Benefits />
+      <WhyUs />
       <Gallery />
       <Testimonials />
       <ContactSection />

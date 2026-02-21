@@ -19,11 +19,11 @@ export function Navbar() {
     }, []);
 
     const navLinks = [
-        { name: "Inicio", href: "#hero" },
-        { name: "Servicios", href: "#servicios" },
-        { name: "Beneficios", href: "#beneficios" },
-        { name: "Galería", href: "#galeria" },
-        { name: "Contacto", href: "#contacto" },
+        { name: "Inicio", href: "/" },
+        { name: "Certificaciones", href: "/testes-certificaciones" },
+        { name: "Gatos", href: "/servicios/gatos" },
+        { name: "Servicios", href: "/#servicios" },
+        { name: "Contacto", href: "/#contacto" },
     ];
 
     return (

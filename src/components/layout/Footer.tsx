@@ -36,11 +36,11 @@ export function Footer() {
                     <div>
                         <h3 className="font-bold text-white mb-6">Enlaces Rápidos</h3>
                         <ul className="space-y-3 text-sm">
-                            <li><Link href="#servicios" className="hover:text-yellow-400 transition-colors">Nuestros Servicios</Link></li>
-                            <li><Link href="#beneficios" className="hover:text-yellow-400 transition-colors">Por Qué Elegirnos</Link></li>
-                            <li><Link href="#galeria" className="hover:text-yellow-400 transition-colors">Galería de Proyectos</Link></li>
-                            <li><Link href="#faq" className="hover:text-yellow-400 transition-colors">Preguntas Frecuentes</Link></li>
-                            <li><Link href="#contacto" className="hover:text-yellow-400 transition-colors">Solicitar Presupuesto</Link></li>
+                            <li><Link href="/" className="hover:text-yellow-400 transition-colors">Inicio</Link></li>
+                            <li><Link href="/testes-certificaciones" className="hover:text-yellow-400 transition-colors">Testes y Certificaciones</Link></li>
+                            <li><Link href="/#servicios" className="hover:text-yellow-400 transition-colors">Nuestros Servicios</Link></li>
+                            <li><Link href="/#galeria" className="hover:text-yellow-400 transition-colors">Galería</Link></li>
+                            <li><Link href="/#contacto" className="hover:text-yellow-400 transition-colors">Contacto</Link></li>
                         </ul>
                     </div>
 
@@ -48,11 +48,11 @@ export function Footer() {
                     <div>
                         <h3 className="font-bold text-white mb-6">Protección Para</h3>
                         <ul className="space-y-3 text-sm">
-                            <li><Link href="#" className="hover:text-yellow-400 transition-colors">Balcones e Terrazas</Link></li>
-                            <li><Link href="#" className="hover:text-yellow-400 transition-colors">Ventanas</Link></li>
-                            <li><Link href="#" className="hover:text-yellow-400 transition-colors">Escaleras y Áticos</Link></li>
-                            <li><Link href="#" className="hover:text-yellow-400 transition-colors">Seguridad para Niños</Link></li>
-                            <li><Link href="#" className="hover:text-yellow-400 transition-colors">Redes para Gatos</Link></li>
+                            <li><Link href="/servicios/ninos" className="hover:text-yellow-400 transition-colors">Seguridad Infantil</Link></li>
+                            <li><Link href="/servicios/gatos" className="hover:text-yellow-400 transition-colors">Redes para Gatos</Link></li>
+                            <li><Link href="/servicios/aves" className="hover:text-yellow-400 transition-colors">Control de Aves (Palomas)</Link></li>
+                            <li><Link href="/#servicios" className="hover:text-yellow-400 transition-colors">Terrazas y Balcones</Link></li>
+                            <li><Link href="/#servicios" className="hover:text-yellow-400 transition-colors">Ventanas y Escaleras</Link></li>
                         </ul>
                     </div>
 
