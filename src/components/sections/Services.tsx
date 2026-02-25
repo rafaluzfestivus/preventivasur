@@ -9,7 +9,7 @@ export function Services() {
         {
             icon: <Home className="w-10 h-10 text-yellow-500" />,
             title: "Mallas para Gatos",
-            description: "Especialistas en redes de protección anti-caídas. Evita el 'síndrome del paracaidista' con mallas anti-mordeduras.",
+            description: "Especialistas en redes de protección anti-caídas. Evita el 'síndrome del paracaidista' con nuestras mallas de seguridad.",
             href: "/proteccion#gatos"
         },
         {

@@ -71,7 +71,7 @@ export default function ProteccionContent() {
                         </h1>
                         <p className="text-xl text-slate-300 leading-relaxed mb-12">
                             Soluciones especializadas en redes de seguridad para niños, mascotas y control de aves en
-                            <strong> Chamberí, Salamanca, Retiro</strong> y todo Madrid.
+                            todo Madrid.
                             Resistencia, estética y tranquilidad garantizada.
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center gap-6">
@@ -123,7 +123,7 @@ export default function ProteccionContent() {
                                 <span className="text-yellow-600 italic">Tranquilidad para los Padres</span>
                             </h2>
                             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                                Protege a los que más quieres en tu hogar en **Pozuelo, Aravaca o Alcobendas**.
+                                Protege a los que más quieres en tu hogar.
                                 Solución discreta y resistente, con seguridad certificada para ventanas, balcones y escaleras
                                 sin sacrificar la luminosidad de tu vivienda.
                             </p>
@@ -139,7 +139,7 @@ export default function ProteccionContent() {
                                 </div>
                                 <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
                                     <h4 className="font-bold text-slate-900 mb-2">Sin Aristas</h4>
-                                    <p className="text-sm text-slate-600">Suaves al tacto e imposibles de escalar. Cero riesgos de corte.</p>
+                                    <p className="text-sm text-slate-600">Suaves al tacto y seguras para toda la familia.</p>
                                 </div>
                                 <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
                                     <h4 className="font-bold text-slate-900 mb-2">Instalación Profesional</h4>
@@ -193,7 +193,7 @@ export default function ProteccionContent() {
                             </h2>
                             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                                 Evita el temido **"Síndrome del Paracaidista"**.
-                                Instalamos redes ultra-resistentes y anti-mordeduras en balcones de **toda la Comunidad de Madrid**.
+                                Instalamos redes ultra-resistentes en balcones de **toda la Comunidad de Madrid**.
                                 Diseñadas para que tus felinos disfruten de la brisa con total seguridad.
                             </p>
 
@@ -250,7 +250,7 @@ export default function ProteccionContent() {
                                 <span className="text-yellow-600 italic">Solución Definitiva contra Palomas</span>
                             </h2>
                             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                                En Madrid, el problema de las palomas es una plaga urbana persistente en el **Centro, Tetuán y Vallecas**.
+                                En Madrid, el problema de las palomas es una plaga urbana persistente.
                                 Nuestras redes crean un bloqueo físico que impide que las palomas aniden o se posen de forma definitiva y ética.
                             </p>
 

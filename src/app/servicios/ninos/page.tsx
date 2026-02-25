@@ -19,7 +19,7 @@ export default function NinosPage() {
         {
             icon: <Info className="w-8 h-8 text-yellow-500" />,
             title: "Sin Aristas ni Peligros",
-            description: "A diferencia de otros sistemas, nuestras redes são suaves al tacto e imposibles de escalar, evitando cortes ou atrapamientos."
+            description: "A diferencia de otros sistemas, nuestras redes son suaves al tacto y seguras, evitando cortes o atrapamientos."
         },
         {
             icon: <Clock className="w-8 h-8 text-yellow-500" />,
@@ -121,7 +121,7 @@ export default function NinosPage() {
                     <h2 className="text-3xl font-bold text-slate-900 mb-12">Lo que dicen los padres en Madrid</h2>
                     <div className="bg-white p-8 rounded-3xl shadow-lg italic text-slate-700 text-lg">
                         "Viviendo en un piso 12 con dos niños pequeños, la ansiedad era constante. Preventiva Centro instaló las redes en una mañana y el cambio en nuestra calidad de vida ha sido total. Son casi imperceptibles y muy seguras."
-                        <div className="mt-4 font-bold text-[#4d2a36] not-italic">— Familia Garzón, Barrio de Salamanca</div>
+                        <div className="mt-4 font-bold text-[#4d2a36] not-italic">— Familia Garzón, Madrid</div>
                     </div>
                 </div>
             </section>

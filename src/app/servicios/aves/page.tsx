@@ -79,7 +79,7 @@ export default function AvesPage() {
                         <div>
                             <h2 className="text-3xl font-bold text-slate-900 mb-6">El fin de las palomas en tu balcón</h2>
                             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                                Em Madrid, o problema das pombas é quase uma praga urbana, especialmente nos prédios mais antigos ou em zonas como o Centro, Chamberí e Salamanca. O cliente aqui está desesperado porque já tentou de tudo (espetos, corujas de plástico, CD pendurado) e nada funcionou.
+                                Em Madrid, o problema das pombas é quase uma praga urbana, especialmente nos prédios mais antigos. O cliente aqui está desesperado porque já tentou de tudo (espetos, corujas de plástico, CD pendurado) e nada funcionou.
                             </p>
                             <p className="text-lg text-slate-600 mb-8 leading-relaxed font-semibold italic">
                                 "Nuestras redes crean un bloqueo físico que impide que las palomas aniden o se posen de forma definitiva."
