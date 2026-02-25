@@ -11,7 +11,7 @@ export function Benefits() {
         "Máxima Estética: No alteran la fachada ni las vistas.",
         "Material Ignífugo y No Tóxico.",
         "Instalación sin Obras molestas.",
-        "Garantía de 3 años en materiales e instalación.",
+        "Garantía de 2 años en materiales e instalación.",
         "Servicio a nivel nacional.",
     ];
 

@@ -32,7 +32,7 @@ export function Services() {
         {
             icon: <Maximize className="w-10 h-10 text-yellow-500" />,
             title: "Mallas para Terrazas",
-            description: "Seguridad y protección para sus terrazas y balcones sin cambios estéticos ni visuales.",
+            description: "Seguridad y protección para sus terrazas y balcones sin impactos visuales.",
         },
         {
             icon: <Waves className="w-10 h-10 text-yellow-500" />,
@@ -49,7 +49,7 @@ export function Services() {
                         Soluciones de Seguridad Integral
                     </h2>
                     <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                        Adaptamos nuestras redes de protección a cualquier espacio y necesidad en Madrid, garantizando la máxima resistencia.
+                        Adaptamos nuestras redes de protección a cualquier espacio y necesidad garantizando la máxima resistencia.
                     </p>
                 </div>
 

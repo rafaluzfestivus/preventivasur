@@ -13,12 +13,12 @@ export function WhyUs() {
         {
             icon: <Sparkles className="w-8 h-8 text-yellow-500" />,
             title: "Instalación Limpia",
-            description: "Usamos protectores de calzado y aspiradores durante el montaje. Tu casa quedará impecable.",
+            description: "La limpieza de su casa es nuestro compromiso. Su casa quedará impecable.",
         },
         {
             icon: <Clock className="w-8 h-8 text-yellow-500" />,
             title: "Atención Ágil",
-            description: "Presupuestos por WhatsApp en minutos y plazos de instalación mínimos en toda la Comunidad de Madrid.",
+            description: "Presupuestos por WhatsApp en menor tiempo y plazos de instalación mínimos en toda la Comunidad de Madrid.",
         },
         {
             icon: <FileCheck2 className="w-8 h-8 text-yellow-500" />,
