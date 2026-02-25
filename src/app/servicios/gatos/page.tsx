@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cat, AlertTriangle, ShieldCheck, Heart, Waves, MessageCircle } from "lucide-react";
+import { Cat, AlertTriangle, Heart, Waves, MessageCircle } from "lucide-react";
 import Link from "next/link";
 
 export default function GatosPage() {
@@ -11,11 +11,7 @@ export default function GatosPage() {
             title: "Adiós ao 'Síndrome del Paracaidista'",
             description: "Evita accidentes fatales. Nuestras redes crean una barrera infranqueable en balcones, ventanas y terrazas sin privar a tu gato de las vistas."
         },
-        {
-            icon: <ShieldCheck className="w-8 h-8 text-yellow-500" />,
-            title: "Malla Anti-Mordeduras",
-            description: "Polietileno de alta densidad con nudos termosellados. Resistente a los dientes y uñas de los gatos más curiosos y enérgicos."
-        },
+
         {
             icon: <Cat className="w-8 h-8 text-yellow-500" />,
             title: "Bienestar Felino",

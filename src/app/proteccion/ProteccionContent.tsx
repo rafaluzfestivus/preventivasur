@@ -198,13 +198,7 @@ export default function ProteccionContent() {
                             </p>
 
                             <ul className="space-y-4 mb-10">
-                                <li className="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-sm border border-gray-100">
-                                    <CheckCircle className="text-green-500 w-6 h-6 mt-1" />
-                                    <div>
-                                        <h4 className="font-bold text-slate-900">Anti-Mordeduras (Reforzadas)</h4>
-                                        <p className="text-sm text-slate-600">Material de alta densidad que resiste los dientes y uñas de los gatos más curiosos.</p>
-                                    </div>
-                                </li>
+
                                 <li className="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-sm border border-gray-100">
                                     <CheckCircle className="text-green-500 w-6 h-6 mt-1" />
                                     <div>
