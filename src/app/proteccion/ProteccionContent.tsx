@@ -317,7 +317,7 @@ export default function ProteccionContent() {
                         ¿Qué necesitas proteger hoy?
                     </h2>
                     <p className="text-xl text-slate-600 mb-12">
-                        Nuestro equipo técnico está listo para asesorarte. Instalaciones profesionales en 24-48 horas en toda la Comunidad de Madrid.
+                        Nuestro equipo técnico está listo para asesorarte. Instalaciones profesionales en toda la Comunidad de Madrid.
                     </p>
                     <div className="flex flex-col md:flex-row justify-center gap-6">
                         <Link

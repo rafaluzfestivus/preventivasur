@@ -103,7 +103,7 @@ export default function GatosPage() {
                         <div className="space-y-4">
                             <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center font-bold text-xl mx-auto">1</div>
                             <h3 className="text-xl font-bold">Foto por WhatsApp</h3>
-                            <p className="text-slate-400">Envíanos una foto de tu terraza y recibe presupuesto en minutos.</p>
+                            <p className="text-slate-400">Envíanos una foto de tu terraza y recibe tu presupuesto personalizado.</p>
                         </div>
                         <div className="space-y-4">
                             <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center font-bold text-xl mx-auto">2</div>
@@ -134,7 +134,7 @@ export default function GatosPage() {
                         </div>
                         <div>
                             <h3 className="text-xl font-bold text-slate-900 mb-2">¿Cuánto tiempo tardáis en instalar?</h3>
-                            <p className="text-slate-600">La mayoría de las instalaciones en balcones o ventanas se realizan en 1 a 2 horas, con un acabado limpio y profesional.</p>
+                            <p className="text-slate-600">La mayoría de las instalaciones en balcones o ventanas se realizan de forma ágil, con un acabado limpio y profesional.</p>
                         </div>
                     </div>
                 </div>

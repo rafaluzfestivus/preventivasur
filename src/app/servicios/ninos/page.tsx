@@ -80,7 +80,7 @@ export default function NinosPage() {
                             <ul className="space-y-4">
                                 <li className="flex items-center gap-3">
                                     <Shield className="text-green-500 w-6 h-6" />
-                                    <span className="text-slate-700 font-medium">Instalación en menos de 24h</span>
+                                    <span className="text-slate-700 font-medium">Instalación rápida y profesional</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <Shield className="text-green-500 w-6 h-6" />
