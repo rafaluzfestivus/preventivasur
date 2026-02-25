@@ -2,6 +2,7 @@
 
 import { Phone, Mail, MapPin, Send, Loader2, CheckCircle, XCircle } from "lucide-react";
 import { useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 export function ContactSection() {
     const [formData, setFormData] = useState({
@@ -43,7 +44,7 @@ export function ContactSection() {
 
         const sheetsData = new URLSearchParams();
         sheetsData.append("telefono", formData.telefono);
-        sheetsData.append("fonte", "form");
+        sheetsData.append("fonte", "site");
         sheetsData.append("Nombre", formData.nombre);
         sheetsData.append("email", formData.email);
         sheetsData.append("cod_postal", formData.codigoPostal);
@@ -51,6 +52,23 @@ export function ContactSection() {
         sheetsData.append("Message", `[${formData.servicio}] ${formData.mensaje}`);
 
         try {
+            // 1. Send to Supabase (Dashboard)
+            const { error: supabaseError } = await supabase
+                .from('clients')
+                .upsert({
+                    name: formData.nombre,
+                    whatsapp: formData.telefono.replace(/\D/g, ''), // Normalize more strictly
+                    email: formData.email,
+                    postal_code: formData.codigoPostal,
+                    service_requested: formData.servicio,
+                    message: formData.mensaje,
+                    source: 'site',
+                    status: 'lead'
+                }, { onConflict: 'whatsapp' });
+
+            if (supabaseError) console.error("Error saving to Supabase:", supabaseError);
+
+            // 2. Original Webhooks
             const [response] = await Promise.all([
                 fetch("https://api.web3forms.com/submit", {
                     method: "POST",
