@@ -66,7 +66,21 @@ export function ContactSection() {
                     status: 'lead'
                 }, { onConflict: 'whatsapp' });
 
-            if (supabaseError) console.error("Error saving to Supabase:", supabaseError);
+            if (supabaseError) {
+                console.error("Error saving to Supabase:", supabaseError);
+                console.error("Attempted data:", {
+                    name: formData.nombre,
+                    whatsapp: formData.telefono.replace(/\D/g, ''),
+                    email: formData.email,
+                    postal_code: formData.codigoPostal,
+                    service_requested: formData.servicio,
+                    message: formData.mensaje,
+                    source: 'site',
+                    status: 'lead'
+                });
+            } else {
+                console.log("Lead saved successfully to Supabase");
+            }
 
             // 2. Original Webhooks
             const [response] = await Promise.all([
