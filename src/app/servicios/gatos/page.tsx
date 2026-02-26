@@ -126,7 +126,7 @@ export default function GatosPage() {
                     <div className="space-y-8">
                         <div>
                             <h3 className="text-xl font-bold text-slate-900 mb-2">¿Pueden romperla mordiendo?</h3>
-                            <p className="text-slate-600">Nuestras redes de polietileno premium están diseñadas para resistir mordeduras accidentales. El material es ultra tenaz y los nudos termosellados evitan que se deshilache.</p>
+                            <p className="text-slate-600">Nuestras redes de polietileno premium están diseñadas para resistir mordeduras accidentales. El material es ultra tenaz y evita que se deshilache.</p>
                         </div>
                         <div>
                             <h3 className="text-xl font-bold text-slate-900 mb-2">¿Se puede instalar en áticos sin techo?</h3>
