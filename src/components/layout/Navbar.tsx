@@ -20,6 +20,7 @@ export function Navbar() {
 
     const navLinks = [
         { name: "Inicio", href: "/" },
+        { name: "Nosotros", href: "/#sobre-nosotros" },
         { name: "Certificaciones", href: "/testes-certificaciones" },
         { name: "Protección", href: "/proteccion" },
         { name: "Servicios", href: "/#servicios" },
