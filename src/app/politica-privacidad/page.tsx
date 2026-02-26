@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
                 <p>
                     Los datos personales recabados a través de este sitio web son responsabilidad de Preventiva Centro.<br />
                     <strong>Correo electrónico de contacto:</strong> contacto@preventivacentro.es<br />
-                    <strong>Teléfono:</strong> 615 744 742<br />
+                    <strong>Teléfono:</strong> 637 003 793<br />
                     Ubicación: España (Prestamos servicio en toda la Península).
                 </p>
 

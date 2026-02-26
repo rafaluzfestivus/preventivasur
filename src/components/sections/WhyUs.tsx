@@ -23,7 +23,7 @@ export function WhyUs() {
         {
             icon: <FileCheck2 className="w-8 h-8 text-yellow-500" />,
             title: "Certificación Técnica",
-            description: "Solo utilizamos polietileno virgen con nudos termosellados, testado para soportar 150kg/m².",
+            description: "Solo utilizamos polietileno virgen, testado para soportar 150kg/m².",
         }
     ];
 
