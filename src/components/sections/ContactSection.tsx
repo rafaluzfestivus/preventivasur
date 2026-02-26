@@ -38,7 +38,7 @@ export function ContactSection() {
             Email: formData.email,
             "Código Postal": formData.codigoPostal,
             Servicio: formData.servicio,
-            message: formData.mensaje,
+            Mensaje: formData.mensaje,
             subject: "Nuevo mensaje desde Preventiva Centro"
         };
 
@@ -49,7 +49,7 @@ export function ContactSection() {
         sheetsData.append("email", formData.email);
         sheetsData.append("cod_postal", formData.codigoPostal);
         sheetsData.append("enviado_dt_hr", formattedDate);
-        sheetsData.append("Message", `[${formData.servicio}] ${formData.mensaje}`);
+        sheetsData.append("Mensaje", `[${formData.servicio}] ${formData.mensaje}`);
 
         try {
             // 1. Send to Supabase (Dashboard)
