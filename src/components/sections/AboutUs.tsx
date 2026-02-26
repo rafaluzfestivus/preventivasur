@@ -37,7 +37,7 @@ export function AboutUs() {
                     <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 text-center">
                             <h3 className="text-3xl font-bold text-[#4d2a36] mb-2">Madrid</h3>
-                            <p className="text-slate-500 font-medium">Sede Centro</p>
+                            <p className="text-slate-500 font-medium">Preventiva Centro</p>
                         </div>
                         <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 text-center">
                             <h3 className="text-3xl font-bold text-[#4d2a36] mb-2">Galicia</h3>
