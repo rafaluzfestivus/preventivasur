@@ -58,7 +58,7 @@ export default function NinosPage() {
                     </motion.div>
                     <div className="lg:w-1/2 relative">
                         <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-200">
-                            <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1542129596030-cf8d268d2a34?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center" />
+                            <div className="w-full h-full bg-[url('/ninos-hero.jpg')] bg-cover bg-center" />
                         </div>
                         <div className="absolute -bottom-6 -right-6 bg-yellow-500 p-6 rounded-2xl shadow-xl text-[#4d2a36] font-bold">
                             <CheckCircle className="w-8 h-8 mb-2" />

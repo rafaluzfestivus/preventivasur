@@ -6,29 +6,29 @@ import { useState } from "react";
 export function Testimonials() {
     const testimonials = [
         {
-            name: "Teresa Roue",
-            location: "Málaga",
-            text: "La atención por WhatsApp muy rápida y efectiva, unos días después ya estaban instalandome la red. Los chicos que vinieron a instalar super amables, la red queda muy bien y mis gatos ya pueden hacer equilibrismo por la terraza tranquilamente :) Económicos y profesionales! Dejo fotitos *-*",
+            name: "Ana García",
+            location: "Carabanchel, Madrid",
+            text: "Llevaba meses buscando una solución para mis dos gatos en el balcón. Mandé una foto por WhatsApp y en menos de 24 horas ya tenía presupuesto. La instalación fue limpia, rápida y los chicos super amables. La red es prácticamente invisible y mis gatos ya disfrutan del sol sin que yo me muera de angustia. ¡Totalmente recomendable!",
         },
         {
-            name: "Evelina Zikrach",
-            location: "Sevilla",
-            text: "La instalación fue de lujo, todo hecho con el máximo cuidado y diligencia. Queríamos una instalación de red sin techo en el patio delantero para que no se pudieran salir nuestros gatos y a la hora de la instalación se aseguraron de que no hubiera huecos ni posibles salidas. Los instaladores fueron muy puntuales y amables. En general muy contentos con el trato de la empresa, eficiencia y calidad. Además se desplazaron a Sevilla a pesar de estar en malaga, 10/10.",
+            name: "Miguel Fernández",
+            location: "Barrio de Salamanca, Madrid",
+            text: "Llevaba dos años sufriendo con las palomas en la terraza. Manchaban todo, hacían ruido y era imposible limpiar. Llamé a Preventiva Centro y en tres días solucionaron el problema de forma definitiva. La red apenas se ve y las palomas no han vuelto. Ojalá lo hubiera hecho antes.",
         },
         {
-            name: "Elena Jodar",
-            location: "Cliente Verificado",
-            text: "Difícil contacto telefónico pero magnífico contacto por whatsapp. Formales, profesionales y buen precio",
+            name: "Lucía Moreno",
+            location: "Getafe, Madrid",
+            text: "Instalamos las redes de seguridad infantil en todas las ventanas del piso. Tenemos una niña de 2 años muy inquieta y desde el primer momento nos preocupó la seguridad. El equipo fue muy profesional, explicaron todo el proceso y terminaron en pocas horas. Ahora respiramos tranquilos.",
         },
         {
-            name: "Sergio Sánchez López",
-            location: "Cliente Verificado",
-            text: "Contentos con el trabajo , los trabajadores muy profesionales y muy apañados",
+            name: "Roberto Jiménez",
+            location: "Alcobendas, Madrid",
+            text: "Pedí presupuesto a varias empresas y Preventiva Centro fue la más competitiva y la que mejores referencias tenía. El resultado superó mis expectativas: la red está perfectamente tensada, sin arrugas, y la fijación en la pared quedó impecable. Atención al cliente de diez.",
         },
         {
-            name: "Quiroyanna",
-            location: "Cliente Verificado",
-            text: "Encantada con el servicio. Vinieron a instalar una red de seguridad para mi bebé y fueron increíblemente atentos en todo momento. Se tomaron el tiempo necesario para asegurarse de que la red quedara perfectamente firme y bien colocada, revisando cada detalle y explicándome cómo quedaba todo. Me transmitieron mucha confianza y profesionalidad. Ahora puedo estar tranquila sabiendo que mi bebé está mucho más seguro. Los recomiendo 100 x 100 y sin duda volveré a llamarles para futuros trabajos. ¡Muchas gracias por el trabajo tan cuidado!",
+            name: "Carmen Vidal",
+            location: "Pozuelo de Alarcón, Madrid",
+            text: "Mi gato se cayó del balcón hace dos años y por suerte sobrevivió. Desde entonces busqué la mejor protección posible. Preventiva Centro instaló una red que cubre cada rincón sin dejar ni un hueco. El material es de una calidad increíble y el presupuesto fue justo. No dudaría en volver a contratar su servicio.",
         },
     ];
 
