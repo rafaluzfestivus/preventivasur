@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import { useState } from "react";
 import { motion } from "framer-motion";
 
 export function Gallery() {
@@ -36,7 +34,6 @@ export function Gallery() {
                             viewport={{ once: true }}
                             className="relative aspect-square group overflow-hidden rounded-xl bg-slate-200"
                         >
-                            {/* Replace simple div with Image when real images are available, utilizing the src */}
                             <div
                                 className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                                 style={{ backgroundImage: `url(${project.src})` }}
@@ -50,7 +47,7 @@ export function Gallery() {
                 </div>
 
                 <div className="text-center mt-12">
-                    <a href="https://www.instagram.com/preventiva_sur/" target="_blank" className="text-yellow-600 font-semibold hover:underline">
+                    <a href="https://www.instagram.com/preventivacentro/" target="_blank" rel="noopener noreferrer" className="text-yellow-600 font-semibold hover:underline">
                         Ver más en Instagram &rarr;
                     </a>
                 </div>
