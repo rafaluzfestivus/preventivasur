@@ -9,6 +9,7 @@ import { CookieConsent } from "@/components/layout/CookieConsent";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://preventivacentro.es"),
   title: "Instalación de Redes de Protección en Madrid | Preventiva Centro",
   description: "Especialistas en instalación de redes de protección para balcones, ventanas y terrazas en Madrid y alrededores. Resistencia de 150kg/m² y 3 años de garantía.",
   keywords: ["redes de protección madrid", "mallas de seguridad madrid", "redes para balcones madrid", "redes para gatos madrid", "seguridad infantil ventanas", "instalación redes madrid", "mallas anticaídas", "protección terrazas", "Preventiva Centro", "precio redes protección", "presupuesto mallas seguridad", "instaladores redes madrid"],
@@ -106,8 +107,6 @@ export default function RootLayout({
     "sameAs": [
       "https://www.instagram.com/preventivacentro/"
     ],
-    "areaServed": ["Madrid", "Comunidad de Madrid"],
-    "sameAs": ["https://www.instagram.com/preventivacentro/"],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],

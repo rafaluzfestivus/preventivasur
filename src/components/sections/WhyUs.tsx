@@ -45,7 +45,6 @@ export function WhyUs() {
                         <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
                             <div
                                 className="w-full h-full bg-cover bg-center"
-                                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1200&auto=format&fit=crop')" }}
                                 style={{ backgroundImage: "url('https://images.unsplash.com/photo-1592194996308-7b43878e84a6?q=80&w=1200&auto=format&fit=crop')" }}
                                 aria-label="Gato protegido con red de seguridad en terraza"
                             />

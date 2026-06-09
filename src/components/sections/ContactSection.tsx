@@ -75,26 +75,6 @@ export function ContactSection() {
         sheetsData.append("Mensaje", `[${formData.servicio}] ${formData.mensaje}`);
 
         try {
-            const { error: supabaseError } = await supabase
-                .from('clients')
-                .upsert({
-                    name: formData.nombre,
-                    whatsapp: formData.telefono.replace(/\D/g, ''),
-                    email: formData.email,
-                    postal_code: formData.codigoPostal,
-                    service_requested: formData.servicio,
-                    message: formData.mensaje,
-                    source: 'site',
-                    status: 'lead'
-                }, { onConflict: 'whatsapp' });
-
-            if (supabaseError) {
-                console.error("Error saving to Supabase:", supabaseError);
-            } else {
-                console.log("Lead saved successfully to Supabase");
-            }
-
-            const [response] = await Promise.all([
             // All 4 destinations fire in parallel — no sequential blocking
             const [web3formsResult, supabaseResult, webhookResult, sheetsResult] = await Promise.allSettled([
                 fetch("https://api.web3forms.com/submit", {
@@ -128,12 +108,9 @@ export function ContactSection() {
                 }),
             ]);
 
-            const result = await response.json();
-
-            if (response.status === 200) {
-                fireGoogleAdsConversion();
             // Primary signal: web3forms success determines UX outcome
             if (web3formsResult.status === 'fulfilled' && web3formsResult.value.ok) {
+                fireGoogleAdsConversion();
                 setStatus("success");
                 setFormData({
                     nombre: "",
