@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, UserCheck, Sparkles, Clock, FileCheck2 } from "lucide-react";
+import { UserCheck, Sparkles, Clock, FileCheck2 } from "lucide-react";
 
 export function WhyUs() {
     const reasons = [
@@ -12,8 +12,8 @@ export function WhyUs() {
         },
         {
             icon: <Sparkles className="w-8 h-8 text-yellow-500" />,
-            title: "Instalación Limpia",
-            description: "La limpieza de su casa es nuestro compromiso. Su casa quedará impecable.",
+            title: "10 Años en el Mercado",
+            description: "Más de una década de experiencia instalando redes de protección en toda la Península Ibérica.",
         },
         {
             icon: <Clock className="w-8 h-8 text-yellow-500" />,
