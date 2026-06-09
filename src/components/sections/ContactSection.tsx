@@ -105,11 +105,19 @@ export function ContactSection() {
             if (error) console.error("Supabase error:", error);
         });
 
-        fetch("https://fluxo.festivusia.com/webhook/emailpreventiva", {
+        fetch("https://painel.preventivacentro.es/api/leads", {
             method: "POST",
-            headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify(data),
-        }).catch(err => console.error("Webhook error:", err));
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                token: "prevcentro-site-2026",
+                name: formData.nombre,
+                email: formData.email,
+                whatsapp: formData.telefono.replace(/\D/g, ''),
+                postal_code: formData.codigoPostal,
+                service_requested: formData.servicio,
+                message: formData.mensaje,
+            }),
+        }).catch(err => console.error("Painel leads error:", err));
 
         fetch("https://script.google.com/macros/s/AKfycbzQcpR7ORaX81o9dfM5vcpo3PHM9S-irh9OweviOgwAeZ7-4V0WYGCRG_AN-EZSQj6g/exec", {
             method: "POST",
