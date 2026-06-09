@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, UserCheck, Sparkles, Clock, FileCheck2 } from "lucide-react";
+import { UserCheck, Sparkles, Clock, FileCheck2 } from "lucide-react";
 
 export function WhyUs() {
     const reasons = [
@@ -12,8 +12,8 @@ export function WhyUs() {
         },
         {
             icon: <Sparkles className="w-8 h-8 text-yellow-500" />,
-            title: "Instalación Limpia",
-            description: "La limpieza de su casa es nuestro compromiso. Su casa quedará impecable.",
+            title: "10 Años en el Mercado",
+            description: "Más de una década de experiencia instalando redes de protección en toda la Península Ibérica.",
         },
         {
             icon: <Clock className="w-8 h-8 text-yellow-500" />,
@@ -46,6 +46,7 @@ export function WhyUs() {
                             <div
                                 className="w-full h-full bg-cover bg-center"
                                 style={{ backgroundImage: "url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1200&auto=format&fit=crop')" }}
+                                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1592194996308-7b43878e84a6?q=80&w=1200&auto=format&fit=crop')" }}
                                 aria-label="Gato protegido con red de seguridad en terraza"
                             />
                         </div>

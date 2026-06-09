@@ -67,6 +67,7 @@ export default function AvesPage() {
                     <div className="lg:w-1/2">
                         <div className="rounded-3xl overflow-hidden shadow-2xl aspect-video bg-slate-200">
                             <div className="w-full h-full bg-[url('/gallery-3.jpg')] bg-cover bg-center" />
+                            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/gallery-4.jpg')" }} />
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,29 @@ import { Phone, Mail, MapPin, Send, Loader2, CheckCircle, XCircle } from "lucide
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 
+function fireGoogleAdsConversion() {
+    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+        // IMPORTANT: Replace CONVERSION_LABEL with the label from Google Ads > Conversions dashboard
+        (window as any).gtag('event', 'conversion', {
+            'send_to': 'AW-17944651982/CONVERSION_LABEL',
+            'value': 1.0,
+            'currency': 'EUR',
+        });
+    }
+    if (typeof window !== 'undefined' && Array.isArray((window as any).dataLayer)) {
+        (window as any).dataLayer.push({ 'event': 'generate_lead', 'form_name': 'contact_form' });
+    }
+}
+
+function trackPhoneClick(number: string) {
+    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'phone_click', { 'event_category': 'contact', 'phone_number': number });
+    }
+    if (typeof window !== 'undefined' && Array.isArray((window as any).dataLayer)) {
+        (window as any).dataLayer.push({ 'event': 'phone_click', 'phone_number': number });
+    }
+}
+
 export function ContactSection() {
     const [formData, setFormData] = useState({
         nombre: "",
@@ -52,12 +75,11 @@ export function ContactSection() {
         sheetsData.append("Mensaje", `[${formData.servicio}] ${formData.mensaje}`);
 
         try {
-            // 1. Send to Supabase (Dashboard)
             const { error: supabaseError } = await supabase
                 .from('clients')
                 .upsert({
                     name: formData.nombre,
-                    whatsapp: formData.telefono.replace(/\D/g, ''), // Normalize more strictly
+                    whatsapp: formData.telefono.replace(/\D/g, ''),
                     email: formData.email,
                     postal_code: formData.codigoPostal,
                     service_requested: formData.servicio,
@@ -68,22 +90,13 @@ export function ContactSection() {
 
             if (supabaseError) {
                 console.error("Error saving to Supabase:", supabaseError);
-                console.error("Attempted data:", {
-                    name: formData.nombre,
-                    whatsapp: formData.telefono.replace(/\D/g, ''),
-                    email: formData.email,
-                    postal_code: formData.codigoPostal,
-                    service_requested: formData.servicio,
-                    message: formData.mensaje,
-                    source: 'site',
-                    status: 'lead'
-                });
             } else {
                 console.log("Lead saved successfully to Supabase");
             }
 
-            // 2. Original Webhooks
             const [response] = await Promise.all([
+            // All 4 destinations fire in parallel — no sequential blocking
+            const [web3formsResult, supabaseResult, webhookResult, sheetsResult] = await Promise.allSettled([
                 fetch("https://api.web3forms.com/submit", {
                     method: "POST",
                     headers: {
@@ -92,27 +105,35 @@ export function ContactSection() {
                     },
                     body: JSON.stringify(data),
                 }),
+                supabase.from('clients').upsert({
+                    name: formData.nombre,
+                    whatsapp: formData.telefono.replace(/\D/g, ''),
+                    email: formData.email,
+                    postal_code: formData.codigoPostal,
+                    service_requested: formData.servicio,
+                    message: formData.mensaje,
+                    source: 'site',
+                    status: 'lead'
+                }, { onConflict: 'whatsapp' }),
                 fetch("https://fluxo.festivusia.com/webhook/emailpreventiva", {
                     method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json"
-                    },
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
                     body: JSON.stringify(data),
-                }).catch(err => console.error("Error sending to secondary webhook:", err)),
+                }),
                 fetch("https://script.google.com/macros/s/AKfycbzQcpR7ORaX81o9dfM5vcpo3PHM9S-irh9OweviOgwAeZ7-4V0WYGCRG_AN-EZSQj6g/exec", {
                     method: "POST",
                     mode: "no-cors",
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded",
-                    },
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
                     body: sheetsData.toString(),
-                }).catch(err => console.error("Error sending to Google Sheets:", err))
+                }),
             ]);
 
             const result = await response.json();
 
             if (response.status === 200) {
+                fireGoogleAdsConversion();
+            // Primary signal: web3forms success determines UX outcome
+            if (web3formsResult.status === 'fulfilled' && web3formsResult.value.ok) {
                 setStatus("success");
                 setFormData({
                     nombre: "",
@@ -123,9 +144,14 @@ export function ContactSection() {
                     mensaje: ""
                 });
             } else {
-                console.error(result);
                 setStatus("error");
+                if (web3formsResult.status === 'rejected') console.error("Web3Forms error:", web3formsResult.reason);
             }
+
+            // Log secondary failures silently
+            if (supabaseResult.status === 'rejected') console.error("Supabase error:", supabaseResult.reason);
+            if (webhookResult.status === 'rejected') console.error("Webhook error:", webhookResult.reason);
+            if (sheetsResult.status === 'rejected') console.error("Sheets error:", sheetsResult.reason);
         } catch (error) {
             console.error(error);
             setStatus("error");
@@ -159,15 +185,14 @@ export function ContactSection() {
                                         <div className="flex flex-col">
                                             <span className="text-xs text-yellow-400 font-bold uppercase tracking-wider">Madrid</span>
                                             <div className="flex flex-col gap-1">
-                                                <a href="tel:+34637003793" className="text-slate-300 hover:text-white transition-colors text-lg">
+                                                <a href="tel:+34637003793" onClick={() => trackPhoneClick('+34637003793')} className="text-slate-300 hover:text-white transition-colors text-lg">
                                                     Móvil: 637 003 793
                                                 </a>
-                                                <a href="tel:+34912096117" className="text-slate-300 hover:text-white transition-colors text-lg">
+                                                <a href="tel:+34912096117" onClick={() => trackPhoneClick('+34912096117')} className="text-slate-300 hover:text-white transition-colors text-lg">
                                                     Fijo: 91 209 61 17
                                                 </a>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -191,8 +216,8 @@ export function ContactSection() {
                                 <div>
                                     <h3 className="font-bold text-xl mb-1">Área de Servicio</h3>
                                     <p className="text-slate-300 text-lg">
-                                        Península Ibérica<br />
-                                        <span className="text-sm text-slate-500">Consultar para islas.</span>
+                                        Madrid y Comunidad de Madrid<br />
+                                        <span className="text-sm text-slate-500">Alcorcón, Getafe, Leganés, Móstoles y más.</span>
                                     </p>
                                 </div>
                             </div>
@@ -312,6 +337,11 @@ export function ContactSection() {
                                         </div>
                                     )}
 
+                                    <div className="bg-yellow-50 border border-yellow-100 rounded-lg px-4 py-3 flex items-center gap-3 text-sm text-slate-600">
+                                        <span className="text-yellow-600 font-bold text-base">✓</span>
+                                        <span>Presupuesto gratuito · Sin compromiso · Respuesta en menos de 24h</span>
+                                    </div>
+
                                     <button
                                         type="submit"
                                         disabled={status === "loading"}
@@ -325,13 +355,17 @@ export function ContactSection() {
                                         ) : (
                                             <>
                                                 <Send className="w-5 h-5" />
-                                                Enviar Solicitud
+                                                Solicitar Presupuesto GRATIS
                                             </>
                                         )}
                                     </button>
 
                                     <p className="text-center text-xs text-slate-500 mt-4">
-                                        Al enviar aceptas nuestra política de privacidad.
+                                        Al enviar aceptas nuestra{" "}
+                                        <a href="/politica-privacidad" className="underline hover:text-slate-700">
+                                            política de privacidad
+                                        </a>
+                                        .
                                     </p>
                                 </div>
                             )}

@@ -81,6 +81,7 @@ export default function CertificacionesContent() {
                                 <Shield className="w-32 h-32 opacity-20" />
                             </div>
                             <div className="absolute inset-0 bg-[url('/gallery-1.jpg')] bg-cover bg-center opacity-80" />
+                            <div className="absolute inset-0 bg-cover bg-center opacity-80" style={{ backgroundImage: "url('/gallery-1.jpg')" }} />
                         </div>
                     </div>
 
