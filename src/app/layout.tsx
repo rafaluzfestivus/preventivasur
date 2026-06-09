@@ -71,7 +71,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
+  const businessJsonLd = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     "name": "Preventiva Centro",
@@ -87,6 +87,25 @@ export default function RootLayout({
     "telephone": "+34637003793",
     "email": "contacto@preventivacentro.es",
     "priceRange": "$$",
+    "areaServed": [
+      "Madrid",
+      "Móstoles",
+      "Leganés",
+      "Getafe",
+      "Alcorcón",
+      "Alcalá de Henares",
+      "Fuenlabrada",
+      "Torrejón de Ardoz",
+      "Parla",
+      "Alcobendas",
+      "Pozuelo de Alarcón",
+      "Las Rozas",
+      "Majadahonda",
+      "Comunidad de Madrid"
+    ],
+    "sameAs": [
+      "https://www.instagram.com/preventivacentro/"
+    ],
     "areaServed": ["Madrid", "Comunidad de Madrid"],
     "sameAs": ["https://www.instagram.com/preventivacentro/"],
     "openingHoursSpecification": {
@@ -94,12 +113,71 @@ export default function RootLayout({
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       "opens": "09:00",
       "closes": "20:00"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "5",
+      "bestRating": "5",
+      "worstRating": "1"
     }
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tiempo tarda la instalación de redes de protección en Madrid?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La instalación suele completarse en pocas horas, dependiendo del tamaño y número de espacios. Trabajamos de forma limpia y sin obras."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué garantía tienen las redes de protección?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nuestras redes incluyen 3 años de garantía. Utilizamos materiales de alta resistencia certificados con una carga de 150 kg/m²."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Podéis instalar redes en cualquier tipo de balcón o terraza en Madrid?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Nos adaptamos a cualquier tipo de balcón, ventana o terraza, sea cual sea su forma o tamaño. Realizamos una medición personalizada antes de la instalación."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Las redes de protección son visibles desde el exterior?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las redes son prácticamente transparentes e imperceptibles desde la calle, preservando la estética de tu fachada sin renunciar a la seguridad."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta instalar redes de protección en Madrid?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El precio depende de las dimensiones del espacio y el tipo de instalación. Ofrecemos presupuesto gratuito y sin compromiso. Contáctanos para recibir tu valoración personalizada."
+        }
+      }
+    ]
   };
 
   return (
     <html lang="es" className="scroll-smooth">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+        {/* Google Ads tag — must initialize dataLayer before GTM */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17944651982"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -132,7 +210,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
         <Navbar />
         <main className="flex-grow pt-20">
