@@ -47,9 +47,8 @@ export function ContactSection() {
         }));
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setStatus("loading");
 
         const now = new Date();
         const formattedDate = `${now.getDate().toString().padStart(2, '0')}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getFullYear()} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
@@ -74,65 +73,50 @@ export function ContactSection() {
         sheetsData.append("enviado_dt_hr", formattedDate);
         sheetsData.append("Mensaje", `[${formData.servicio}] ${formData.mensaje}`);
 
-        try {
-            // All 4 destinations fire in parallel — no sequential blocking
-            const [web3formsResult, supabaseResult, webhookResult, sheetsResult] = await Promise.allSettled([
-                fetch("https://api.web3forms.com/submit", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json"
-                    },
-                    body: JSON.stringify(data),
-                }),
-                supabase.from('clients').upsert({
-                    name: formData.nombre,
-                    whatsapp: formData.telefono.replace(/\D/g, ''),
-                    email: formData.email,
-                    postal_code: formData.codigoPostal,
-                    service_requested: formData.servicio,
-                    message: formData.mensaje,
-                    source: 'site',
-                    status: 'lead'
-                }, { onConflict: 'whatsapp' }),
-                fetch("https://fluxo.festivusia.com/webhook/emailpreventiva", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
-                    body: JSON.stringify(data),
-                }),
-                fetch("https://script.google.com/macros/s/AKfycbzQcpR7ORaX81o9dfM5vcpo3PHM9S-irh9OweviOgwAeZ7-4V0WYGCRG_AN-EZSQj6g/exec", {
-                    method: "POST",
-                    mode: "no-cors",
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: sheetsData.toString(),
-                }),
-            ]);
+        // Show success instantly — all sends happen in background
+        fireGoogleAdsConversion();
+        setStatus("success");
+        setFormData({
+            nombre: "",
+            telefono: "",
+            email: "",
+            codigoPostal: "",
+            servicio: "Protección para Balcón",
+            mensaje: ""
+        });
 
-            // Primary signal: web3forms success determines UX outcome
-            if (web3formsResult.status === 'fulfilled' && web3formsResult.value.ok) {
-                fireGoogleAdsConversion();
-                setStatus("success");
-                setFormData({
-                    nombre: "",
-                    telefono: "",
-                    email: "",
-                    codigoPostal: "",
-                    servicio: "Protección para Balcón",
-                    mensaje: ""
-                });
-            } else {
-                setStatus("error");
-                if (web3formsResult.status === 'rejected') console.error("Web3Forms error:", web3formsResult.reason);
-            }
+        // Fire all destinations in background — no await, no blocking
+        fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify(data),
+        }).catch(err => console.error("Web3Forms error:", err));
 
-            // Log secondary failures silently
-            if (supabaseResult.status === 'rejected') console.error("Supabase error:", supabaseResult.reason);
-            if (webhookResult.status === 'rejected') console.error("Webhook error:", webhookResult.reason);
-            if (sheetsResult.status === 'rejected') console.error("Sheets error:", sheetsResult.reason);
-        } catch (error) {
-            console.error(error);
-            setStatus("error");
-        }
+        supabase.from('clients').upsert({
+            name: formData.nombre,
+            whatsapp: formData.telefono.replace(/\D/g, ''),
+            email: formData.email,
+            postal_code: formData.codigoPostal,
+            service_requested: formData.servicio,
+            message: formData.mensaje,
+            source: 'site',
+            status: 'lead'
+        }, { onConflict: 'whatsapp' }).then(({ error }) => {
+            if (error) console.error("Supabase error:", error);
+        });
+
+        fetch("https://fluxo.festivusia.com/webhook/emailpreventiva", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify(data),
+        }).catch(err => console.error("Webhook error:", err));
+
+        fetch("https://script.google.com/macros/s/AKfycbzQcpR7ORaX81o9dfM5vcpo3PHM9S-irh9OweviOgwAeZ7-4V0WYGCRG_AN-EZSQj6g/exec", {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: sheetsData.toString(),
+        }).catch(err => console.error("Sheets error:", err));
     };
 
     return (
