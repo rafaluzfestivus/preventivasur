@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Preventiva Centro",
     images: [
       {
-        url: "/logo-preventiva-centro.png",
+        url: "https://preventivacentro.es/logo-preventiva-centro.png",
         width: 800,
         height: 600,
         alt: "Logo Preventiva Centro",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Preventiva Centro | Redes de Protección en Madrid",
     description: "Instalación profesional de redes de protección y mallas de seguridad en Madrid.",
-    images: ["/logo-preventiva-centro.png"],
+    images: ["https://preventivacentro.es/logo-preventiva-centro.png"],
   },
   alternates: {
     canonical: "https://preventivacentro.es",
@@ -88,15 +88,10 @@ export default function RootLayout({
     "email": "contacto@preventivacentro.es",
     "priceRange": "$$",
     "areaServed": ["Madrid", "Comunidad de Madrid"],
+    "sameAs": ["https://www.instagram.com/preventivacentro/"],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       "opens": "09:00",
       "closes": "20:00"
     }
@@ -105,7 +100,6 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <head>
-        {/* Google tag (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17944651982"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -117,8 +111,6 @@ export default function RootLayout({
             `,
           }}
         />
-
-        {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -128,10 +120,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WH6L3VQJ');`,
           }}
         />
-        {/* End Google Tag Manager */}
       </head>
-      <body className={`${inter.className}  antialiased bg-gray-50 flex flex-col min-h-screen`}>
-        {/* Google Tag Manager (noscript) */}
+      <body className={`${inter.className} antialiased bg-gray-50 flex flex-col min-h-screen`}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-WH6L3VQJ"
@@ -140,7 +130,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        {/* End Google Tag Manager (noscript) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
