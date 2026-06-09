@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     apple: "/logo-preventiva-centro.png",
   },
   verification: {
-    google: undefined,
+    google: "kguG7VzEGNBq-W-Wm2AyNaWulEgyx0gERcx2IsZk0gA",
   },
 };
 
