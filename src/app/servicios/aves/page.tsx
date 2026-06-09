@@ -66,7 +66,7 @@ export default function AvesPage() {
                     </motion.div>
                     <div className="lg:w-1/2">
                         <div className="rounded-3xl overflow-hidden shadow-2xl aspect-video bg-slate-200">
-                            <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1549608276-5786d7ff1f1d?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center" />
+                            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/gallery-4.jpg')" }} />
                         </div>
                     </div>
                 </div>

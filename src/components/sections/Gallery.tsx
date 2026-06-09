@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 
 export function Gallery() {
     const projects = [
-        { id: 1, src: "/img-1.jpg", cat: "Balcón" },
-        { id: 2, src: "/img-2.jpg", cat: "Terraza" },
-        { id: 3, src: "/img-3.jpg", cat: "Ventana" },
-        { id: 4, src: "/img-4.jpg", cat: "Estructura" },
-        { id: 5, src: "/img-5.jpg", cat: "Mascotas" },
-        { id: 6, src: "/img-6.jpg", cat: "Seguridad" },
+        { id: 1, src: "/gallery-1.jpg", cat: "Balcón" },
+        { id: 2, src: "/gallery-2.jpg", cat: "Terraza" },
+        { id: 3, src: "/gallery-3.jpg", cat: "Ventana" },
+        { id: 4, src: "/gallery-4.jpg", cat: "Estructura" },
+        { id: 5, src: "/gallery-5.jpg", cat: "Mascotas" },
+        { id: 6, src: "/gallery-6.jpg", cat: "Seguridad" },
     ];
 
     return (

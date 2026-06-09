@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { CookieConsent } from "@/components/layout/CookieConsent";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "Instalación de Redes de Protección en Madrid | Preventiva Centro",
@@ -60,6 +60,9 @@ export const metadata: Metadata = {
     icon: "/logo-preventiva-centro.png",
     shortcut: "/logo-preventiva-centro.png",
     apple: "/logo-preventiva-centro.png",
+  },
+  verification: {
+    google: undefined,
   },
 };
 
