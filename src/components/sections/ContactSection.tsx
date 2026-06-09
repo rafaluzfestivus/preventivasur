@@ -95,6 +95,8 @@ export function ContactSection() {
             }
 
             const [response] = await Promise.all([
+            // All 4 destinations fire in parallel — no sequential blocking
+            const [web3formsResult, supabaseResult, webhookResult, sheetsResult] = await Promise.allSettled([
                 fetch("https://api.web3forms.com/submit", {
                     method: "POST",
                     headers: {
@@ -103,28 +105,35 @@ export function ContactSection() {
                     },
                     body: JSON.stringify(data),
                 }),
+                supabase.from('clients').upsert({
+                    name: formData.nombre,
+                    whatsapp: formData.telefono.replace(/\D/g, ''),
+                    email: formData.email,
+                    postal_code: formData.codigoPostal,
+                    service_requested: formData.servicio,
+                    message: formData.mensaje,
+                    source: 'site',
+                    status: 'lead'
+                }, { onConflict: 'whatsapp' }),
                 fetch("https://fluxo.festivusia.com/webhook/emailpreventiva", {
                     method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json"
-                    },
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
                     body: JSON.stringify(data),
-                }).catch(err => console.error("Error sending to secondary webhook:", err)),
+                }),
                 fetch("https://script.google.com/macros/s/AKfycbzQcpR7ORaX81o9dfM5vcpo3PHM9S-irh9OweviOgwAeZ7-4V0WYGCRG_AN-EZSQj6g/exec", {
                     method: "POST",
                     mode: "no-cors",
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded",
-                    },
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
                     body: sheetsData.toString(),
-                }).catch(err => console.error("Error sending to Google Sheets:", err))
+                }),
             ]);
 
             const result = await response.json();
 
             if (response.status === 200) {
                 fireGoogleAdsConversion();
+            // Primary signal: web3forms success determines UX outcome
+            if (web3formsResult.status === 'fulfilled' && web3formsResult.value.ok) {
                 setStatus("success");
                 setFormData({
                     nombre: "",
@@ -135,9 +144,14 @@ export function ContactSection() {
                     mensaje: ""
                 });
             } else {
-                console.error(result);
                 setStatus("error");
+                if (web3formsResult.status === 'rejected') console.error("Web3Forms error:", web3formsResult.reason);
             }
+
+            // Log secondary failures silently
+            if (supabaseResult.status === 'rejected') console.error("Supabase error:", supabaseResult.reason);
+            if (webhookResult.status === 'rejected') console.error("Webhook error:", webhookResult.reason);
+            if (sheetsResult.status === 'rejected') console.error("Sheets error:", sheetsResult.reason);
         } catch (error) {
             console.error(error);
             setStatus("error");

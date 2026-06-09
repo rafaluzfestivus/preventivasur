@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { CookieConsent } from "@/components/layout/CookieConsent";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "Instalación de Redes de Protección en Madrid | Preventiva Centro",
@@ -61,6 +61,9 @@ export const metadata: Metadata = {
     shortcut: "/logo-preventiva-centro.png",
     apple: "/logo-preventiva-centro.png",
   },
+  verification: {
+    google: "kguG7VzEGNBq-W-Wm2AyNaWulEgyx0gERcx2IsZk0gA",
+  },
 };
 
 export default function RootLayout({
@@ -103,6 +106,8 @@ export default function RootLayout({
     "sameAs": [
       "https://www.instagram.com/preventivacentro/"
     ],
+    "areaServed": ["Madrid", "Comunidad de Madrid"],
+    "sameAs": ["https://www.instagram.com/preventivacentro/"],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -184,8 +189,6 @@ export default function RootLayout({
             `,
           }}
         />
-
-        {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

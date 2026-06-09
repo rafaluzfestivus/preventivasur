@@ -1,7 +1,6 @@
 "use client";
 
 import { CheckCircle2 } from "lucide-react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 export function Benefits() {
@@ -11,7 +10,7 @@ export function Benefits() {
         "Máxima Estética: No alteran la fachada ni las vistas.",
         "Material Ignífugo y No Tóxico.",
         "Instalación sin Obras molestas.",
-        "Garantía de 2 años en materiales e instalación.",
+        "Garantía de 3 años en materiales e instalación.",
         "Servicio a nivel nacional.",
     ];
 
@@ -19,7 +18,6 @@ export function Benefits() {
         <section id="beneficios" className="py-20 bg-white">
             <div className="container mx-auto px-4 md:px-8">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
-                    {/* Content */}
                     <div className="lg:w-1/2">
                         <span className="text-yellow-500 font-bold tracking-wider text-sm uppercase mb-2 block">
                             Por Qué Elegirnos
@@ -42,33 +40,26 @@ export function Benefits() {
                         </ul>
                     </div>
 
-                    {/* Image Side */}
                     <div className="lg:w-1/2 relative">
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                             <div className="aspect-[4/3] bg-slate-200">
-                                {/* Placeholder for Benefit Image - Could be a closeup of the net or a happy family */}
                                 <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1510563800743-aed236490d08?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center" />
                             </div>
                         </div>
-                        {/* Float Card */}
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: 0.6 }}
+                            viewport={{ once: true }}
                             animate={{ y: [0, -10, 0] }}
-                            // @ts-ignore - formatting issue in tool
                             transition={{
-                                y: {
-                                    duration: 3,
-                                    repeat: Infinity,
-                                    ease: "easeInOut"
-                                },
-                                opacity: { duration: 0.5 }
+                                opacity: { duration: 0.5, delay: 0.6 },
+                                x: { duration: 0.5, delay: 0.6 },
+                                y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
                             }}
                             className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl max-w-xs hidden md:block"
                         >
                             <p className="font-bold text-slate-900 text-lg mb-1">
-                                "El mejor servicio"
+                                &ldquo;El mejor servicio&rdquo;
                             </p>
                             <p className="text-slate-500 text-sm">
                                 Instalación rápida y el resultado es impecable. Muy recomendados.
