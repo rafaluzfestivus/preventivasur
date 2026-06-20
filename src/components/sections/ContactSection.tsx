@@ -2,7 +2,6 @@
 
 import { Phone, Mail, MapPin, Send, Loader2, CheckCircle, XCircle } from "lucide-react";
 import { useState } from "react";
-import { supabase } from "@/lib/supabase";
 
 function fireGoogleAdsConversion() {
     if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
@@ -41,10 +40,7 @@ export function ContactSection() {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
+        setFormData(prev => ({ ...prev, [name]: value }));
     };
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -53,7 +49,7 @@ export function ContactSection() {
         const now = new Date();
         const formattedDate = `${now.getDate().toString().padStart(2, '0')}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getFullYear()} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
 
-        const data = {
+        const web3data = {
             access_key: "26e44386-5cd3-4c4b-a373-01d28e40d700",
             Nombre: formData.nombre,
             Teléfono: formData.telefono,
@@ -89,21 +85,22 @@ export function ContactSection() {
         fetch("https://api.web3forms.com/submit", {
             method: "POST",
             headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify(data),
+            body: JSON.stringify(web3data),
         }).catch(err => console.error("Web3Forms error:", err));
 
-        supabase.from('clients').upsert({
-            name: formData.nombre,
-            whatsapp: formData.telefono.replace(/\D/g, ''),
-            email: formData.email,
-            postal_code: formData.codigoPostal,
-            service_requested: formData.servicio,
-            message: formData.mensaje,
-            source: 'site',
-            status: 'lead'
-        }, { onConflict: 'whatsapp' }).then(({ error }) => {
-            if (error) console.error("Supabase error:", error);
-        });
+        // Saves lead to Supabase (service role, server-side) and creates contact/conversation no Chatwoot
+        fetch("/api/chatwoot", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                nombre: formData.nombre,
+                telefono: formData.telefono,
+                email: formData.email,
+                codigoPostal: formData.codigoPostal,
+                servicio: formData.servicio,
+                mensaje: formData.mensaje,
+            }),
+        }).catch(err => console.error("Chatwoot route error:", err));
 
         fetch("https://painel.preventivacentro.es/api/leads", {
             method: "POST",
@@ -131,7 +128,6 @@ export function ContactSection() {
         <section id="contacto" className="py-20 bg-[#4d2a36] text-white">
             <div className="container mx-auto px-4 md:px-8">
                 <div className="flex flex-col lg:flex-row gap-16">
-                    {/* Contact Info */}
                     <div className="lg:w-1/2">
                         <span className="text-yellow-400 font-bold tracking-wider text-sm uppercase mb-2 block">
                             Contacta con Nosotros
@@ -150,18 +146,14 @@ export function ContactSection() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-xl mb-1">Llámanos</h3>
-                                    <div className="flex flex-col gap-1">
-                                        <div className="flex flex-col">
-                                            <span className="text-xs text-yellow-400 font-bold uppercase tracking-wider">Madrid</span>
-                                            <div className="flex flex-col gap-1">
-                                                <a href="tel:+34637003793" onClick={() => trackPhoneClick('+34637003793')} className="text-slate-300 hover:text-white transition-colors text-lg">
-                                                    Móvil: 637 003 793
-                                                </a>
-                                                <a href="tel:+34912096117" onClick={() => trackPhoneClick('+34912096117')} className="text-slate-300 hover:text-white transition-colors text-lg">
-                                                    Fijo: 91 209 61 17
-                                                </a>
-                                            </div>
-                                        </div>
+                                    <span className="text-xs text-yellow-400 font-bold uppercase tracking-wider block">Madrid</span>
+                                    <div className="flex flex-col gap-1 mt-1">
+                                        <a href="tel:+34637003793" onClick={() => trackPhoneClick('+34637003793')} className="text-slate-300 hover:text-white transition-colors text-lg">
+                                            Móvil: 637 003 793
+                                        </a>
+                                        <a href="tel:+34912096117" onClick={() => trackPhoneClick('+34912096117')} className="text-slate-300 hover:text-white transition-colors text-lg">
+                                            Fijo: 91 209 61 17
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -193,7 +185,6 @@ export function ContactSection() {
                         </div>
                     </div>
 
-                    {/* Form */}
                     <div className="lg:w-1/2">
                         <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-2xl text-slate-900">
                             <h3 className="text-2xl font-bold mb-6">Pedir Presupuesto</h3>
@@ -207,11 +198,7 @@ export function ContactSection() {
                                     <p className="text-green-700">
                                         Gracias por contactarnos. Te responderemos lo antes posible.
                                     </p>
-                                    <button
-                                        type="button"
-                                        onClick={() => setStatus("idle")}
-                                        className="mt-4 text-green-600 hover:text-green-800 font-medium text-sm underline"
-                                    >
+                                    <button type="button" onClick={() => setStatus("idle")} className="mt-4 text-green-600 hover:text-green-800 font-medium text-sm underline">
                                         Enviar otro mensaje
                                     </button>
                                 </div>
@@ -220,64 +207,27 @@ export function ContactSection() {
                                     <div className="grid grid-cols-2 gap-4">
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">Nombre</label>
-                                            <input
-                                                type="text"
-                                                name="nombre"
-                                                value={formData.nombre}
-                                                onChange={handleChange}
-                                                required
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all"
-                                                placeholder="Tu nombre"
-                                            />
+                                            <input type="text" name="nombre" value={formData.nombre} onChange={handleChange} required className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all" placeholder="Tu nombre" />
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">Teléfono</label>
-                                            <input
-                                                type="tel"
-                                                name="telefono"
-                                                value={formData.telefono}
-                                                onChange={handleChange}
-                                                required
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all"
-                                                placeholder="600 000 000"
-                                            />
+                                            <input type="tel" name="telefono" value={formData.telefono} onChange={handleChange} required className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all" placeholder="600 000 000" />
                                         </div>
                                     </div>
 
                                     <div>
                                         <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            required
-                                            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all"
-                                            placeholder="tu@email.com"
-                                        />
+                                        <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all" placeholder="tu@email.com" />
                                     </div>
 
                                     <div className="grid grid-cols-2 gap-4">
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">Código Postal</label>
-                                            <input
-                                                type="text"
-                                                name="codigoPostal"
-                                                value={formData.codigoPostal}
-                                                onChange={handleChange}
-                                                required
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all"
-                                                placeholder="28000"
-                                            />
+                                            <input type="text" name="codigoPostal" value={formData.codigoPostal} onChange={handleChange} required className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all" placeholder="28000" />
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">Tipo de Servicio</label>
-                                            <select
-                                                name="servicio"
-                                                value={formData.servicio}
-                                                onChange={handleChange}
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all bg-white"
-                                            >
+                                            <select name="servicio" value={formData.servicio} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all bg-white">
                                                 <option>Protección para Balcón</option>
                                                 <option>Protección para Ventanas</option>
                                                 <option>Protección para Gatos</option>
@@ -288,15 +238,7 @@ export function ContactSection() {
 
                                     <div>
                                         <label className="block text-sm font-medium text-slate-700 mb-1">Mensaje</label>
-                                        <textarea
-                                            rows={4}
-                                            name="mensaje"
-                                            value={formData.mensaje}
-                                            onChange={handleChange}
-                                            required
-                                            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all resize-none"
-                                            placeholder="Cuéntanos más sobre lo que necesitas..."
-                                        ></textarea>
+                                        <textarea rows={4} name="mensaje" value={formData.mensaje} onChange={handleChange} required className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all resize-none" placeholder="Cuéntanos más sobre lo que necesitas..."></textarea>
                                     </div>
 
                                     {status === "error" && (
@@ -306,35 +248,17 @@ export function ContactSection() {
                                         </div>
                                     )}
 
-                                    <div className="bg-yellow-50 border border-yellow-100 rounded-lg px-4 py-3 flex items-center gap-3 text-sm text-slate-600">
-                                        <span className="text-yellow-600 font-bold text-base">✓</span>
-                                        <span>Presupuesto gratuito · Sin compromiso · Respuesta en menos de 24h</span>
-                                    </div>
-
-                                    <button
-                                        type="submit"
-                                        disabled={status === "loading"}
-                                        className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-4 rounded-lg transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl mt-2 disabled:opacity-70 disabled:cursor-not-allowed"
-                                    >
+                                    <button type="submit" disabled={status === "loading"} className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-4 rounded-lg transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl mt-2 disabled:opacity-70 disabled:cursor-not-allowed">
                                         {status === "loading" ? (
-                                            <>
-                                                <Loader2 className="w-5 h-5 animate-spin" />
-                                                Enviando...
-                                            </>
+                                            <><Loader2 className="w-5 h-5 animate-spin" /> Enviando...</>
                                         ) : (
-                                            <>
-                                                <Send className="w-5 h-5" />
-                                                Solicitar Presupuesto GRATIS
-                                            </>
+                                            <><Send className="w-5 h-5" /> Enviar Solicitud</>
                                         )}
                                     </button>
 
                                     <p className="text-center text-xs text-slate-500 mt-4">
                                         Al enviar aceptas nuestra{" "}
-                                        <a href="/politica-privacidad" className="underline hover:text-slate-700">
-                                            política de privacidad
-                                        </a>
-                                        .
+                                        <a href="/politica-privacidad" className="underline hover:text-slate-700">política de privacidad</a>.
                                     </p>
                                 </div>
                             )}
