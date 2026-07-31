@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { UserCheck, Sparkles, Clock, FileCheck2 } from "lucide-react";
 
 export function WhyUs() {
@@ -42,11 +43,14 @@ export function WhyUs() {
                         <p className="text-slate-300 text-lg leading-relaxed mb-8">
                             Unimos la experiencia internacional con el servicio local en Madrid para ofrecerte la máxima seguridad sin comprometer la estética de tu hogar.
                         </p>
-                        <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
-                            <div
-                                className="w-full h-full bg-cover bg-center"
-                                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1592194996308-7b43878e84a6?q=80&w=1200&auto=format&fit=crop')" }}
-                                aria-label="Gato protegido con red de seguridad en terraza"
+                        <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] relative">
+                            <Image
+                                src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?q=80&w=1200&auto=format&fit=crop"
+                                alt="Gato protegido con red de seguridad en terraza"
+                                fill
+                                loading="lazy"
+                                sizes="(max-width: 1024px) 100vw, 33vw"
+                                className="object-cover"
                             />
                         </div>
                     </div>

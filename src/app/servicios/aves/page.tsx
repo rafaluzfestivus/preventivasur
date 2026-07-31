@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Bird, ShieldAlert, Sparkles, Building2, Heart, CheckCircle, Phone } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AvesPage() {
     const points = [
@@ -29,7 +30,7 @@ export default function AvesPage() {
     ];
 
     return (
-        <main className="pt-24 min-h-screen bg-white">
+        <div className="pt-24 min-h-screen bg-white">
             {/* Hero Section */}
             <section className="bg-[#4d2a36] py-20 text-white relative">
                 <div className="container mx-auto px-4 md:px-8 flex flex-col lg:flex-row items-center gap-12 text-center lg:text-left">
@@ -65,9 +66,15 @@ export default function AvesPage() {
                         </div>
                     </motion.div>
                     <div className="lg:w-1/2">
-                        <div className="rounded-3xl overflow-hidden shadow-2xl aspect-video bg-slate-200">
-                            <div className="w-full h-full bg-[url('/gallery-3.jpg')] bg-cover bg-center" />
-                            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/gallery-4.jpg')" }} />
+                        <div className="rounded-3xl overflow-hidden shadow-2xl aspect-video bg-slate-200 relative">
+                            <Image
+                                src="/gallery-3.jpg"
+                                alt="Red anti-palomas instalada en terraza en Madrid"
+                                fill
+                                loading="lazy"
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                className="object-cover"
+                            />
                         </div>
                     </div>
                 </div>
@@ -142,6 +149,6 @@ export default function AvesPage() {
                     </div>
                 </div>
             </section>
-        </main>
+        </div>
     );
 }

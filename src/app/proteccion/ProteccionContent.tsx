@@ -6,6 +6,7 @@ import {
     Heart, ShieldAlert, Sparkles, Building2, Bird, Cat
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ProteccionContent() {
     const serviceSchema = {
@@ -50,7 +51,7 @@ export default function ProteccionContent() {
     };
 
     return (
-        <main className="pt-20 min-h-screen bg-white text-slate-900">
+        <div className="pt-20 min-h-screen bg-white text-slate-900">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -164,7 +165,14 @@ export default function ProteccionContent() {
                         </div>
                         <div className="lg:w-1/2">
                             <div className="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-square relative">
-                                <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1542129596030-cf8d268d2a34?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center" />
+                                <Image
+                                    src="https://images.unsplash.com/photo-1542129596030-cf8d268d2a34?q=80&w=2670&auto=format&fit=crop"
+                                    alt="Niño jugando seguro junto a ventana protegida con red de seguridad"
+                                    fill
+                                    loading="lazy"
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                    className="object-cover"
+                                />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#4d2a36]/40 to-transparent" />
                                 <div className="absolute bottom-10 left-10 right-10 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/20">
                                     <p className="text-slate-900 font-bold mb-1 italic">"Casi imperceptible para la vista, total protección para tus hijos."</p>
@@ -226,7 +234,14 @@ export default function ProteccionContent() {
                         </div>
                         <div className="lg:w-1/2">
                             <div className="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] relative">
-                                <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2686&auto=format&fit=crop')] bg-cover bg-center" />
+                                <Image
+                                    src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2686&auto=format&fit=crop"
+                                    alt="Gato protegido por red de seguridad anti-caídas"
+                                    fill
+                                    loading="lazy"
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                    className="object-cover"
+                                />
                                 <div className="absolute inset-0 border-[20px] border-white/10 m-6 rounded-[1.5rem]" />
                             </div>
                         </div>
@@ -302,7 +317,14 @@ export default function ProteccionContent() {
                         </div>
                         <div className="lg:w-1/2">
                             <div className="rounded-[3rem] overflow-hidden shadow-2xl aspect-square relative group">
-                                <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1549608276-5786d7ff1f1d?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110" />
+                                <Image
+                                    src="https://images.unsplash.com/photo-1549608276-5786d7ff1f1d?q=80&w=2670&auto=format&fit=crop"
+                                    alt="Red anti-aves protegiendo terraza de palomas"
+                                    fill
+                                    loading="lazy"
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
                                 <div className="absolute inset-0 bg-[#4d2a36]/10 group-hover:bg-transparent transition-all" />
                             </div>
                         </div>
@@ -337,6 +359,6 @@ export default function ProteccionContent() {
                     </div>
                 </div>
             </section>
-        </main>
+        </div>
     );
 }

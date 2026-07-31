@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Shield, Sun, Weight, Flame, EyeOff, Anchor, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CertificacionesContent() {
     const specs = [
@@ -29,7 +30,7 @@ export default function CertificacionesContent() {
     ];
 
     return (
-        <main className="pt-24 min-h-screen bg-white">
+        <div className="pt-24 min-h-screen bg-white">
             {/* Hero Section */}
             <section className="bg-[#4d2a36] py-20 text-white relative overflow-hidden">
                 <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -80,8 +81,14 @@ export default function CertificacionesContent() {
                             <div className="absolute inset-0 flex items-center justify-center text-gray-400">
                                 <Shield className="w-32 h-32 opacity-20" />
                             </div>
-                            <div className="absolute inset-0 bg-[url('/gallery-1.jpg')] bg-cover bg-center opacity-80" />
-                            <div className="absolute inset-0 bg-cover bg-center opacity-80" style={{ backgroundImage: "url('/gallery-1.jpg')" }} />
+                            <Image
+                                src="/gallery-1.jpg"
+                                alt="Red de protección certificada instalada en balcón"
+                                fill
+                                loading="lazy"
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                className="object-cover opacity-80"
+                            />
                         </div>
                     </div>
 
@@ -131,6 +138,6 @@ export default function CertificacionesContent() {
                     </div>
                 </div>
             </section>
-        </main>
+        </div>
     );
 }
