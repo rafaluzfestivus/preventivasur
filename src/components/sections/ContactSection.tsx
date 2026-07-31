@@ -4,10 +4,12 @@ import { Phone, Mail, MapPin, Send, Loader2, CheckCircle, XCircle } from "lucide
 import { useState } from "react";
 
 function fireGoogleAdsConversion() {
-    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-        // IMPORTANT: Replace CONVERSION_LABEL with the label from Google Ads > Conversions dashboard
+    const conversionLabel = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL;
+    if (!conversionLabel) {
+        console.warn('NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL não configurado — conversão do Google Ads não foi disparada.');
+    } else if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
         (window as any).gtag('event', 'conversion', {
-            'send_to': 'AW-17944651982/CONVERSION_LABEL',
+            'send_to': `AW-17944651982/${conversionLabel}`,
             'value': 1.0,
             'currency': 'EUR',
         });
