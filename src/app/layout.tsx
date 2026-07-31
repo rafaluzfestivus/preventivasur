@@ -176,13 +176,28 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-        {/* Google Ads tag — must initialize dataLayer before GTM */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17944651982"></script>
+        {/* Consent Mode v2 — deny non-essential storage until CookieConsent grants it */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
+              gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied',
+                'wait_for_update': 500
+              });
+            `,
+          }}
+        />
+
+        {/* Google Ads tag — must initialize dataLayer before GTM */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17944651982"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
               gtag('js', new Date());
               gtag('config', 'AW-17944651982');
             `,
