@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Cat, AlertTriangle, Heart, Waves, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function GatosPage() {
     const features = [
@@ -56,8 +57,15 @@ export default function GatosPage() {
                         </div>
                     </motion.div>
                     <div className="lg:w-1/2 relative">
-                        <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-200">
-                            <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2686&auto=format&fit=crop')] bg-cover bg-center" />
+                        <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-200 relative">
+                            <Image
+                                src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2686&auto=format&fit=crop"
+                                alt="Gato protegido por red de seguridad anti-caídas en balcón"
+                                fill
+                                loading="lazy"
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                className="object-cover"
+                            />
                         </div>
                         <div className="absolute -bottom-6 -right-6 bg-yellow-500 p-6 rounded-2xl shadow-xl text-[#4d2a36] font-bold">
                             <Heart className="w-8 h-8 mb-2" />

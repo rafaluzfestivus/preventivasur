@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Shield, Home, Clock, CheckCircle, Info, Phone } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function NinosPage() {
     const features = [
@@ -57,9 +58,15 @@ export default function NinosPage() {
                         </Link>
                     </motion.div>
                     <div className="lg:w-1/2 relative">
-                        <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-200">
-                            <div className="w-full h-full bg-[url('/gallery-6.jpg')] bg-cover bg-center" />
-                            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/gallery-2.jpg')" }} />
+                        <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-200 relative">
+                            <Image
+                                src="/gallery-6.jpg"
+                                alt="Red de seguridad infantil instalada en ventana en Madrid"
+                                fill
+                                loading="lazy"
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                className="object-cover"
+                            />
                         </div>
                         <div className="absolute -bottom-6 -right-6 bg-yellow-500 p-6 rounded-2xl shadow-xl text-[#4d2a36] font-bold">
                             <CheckCircle className="w-8 h-8 mb-2" />

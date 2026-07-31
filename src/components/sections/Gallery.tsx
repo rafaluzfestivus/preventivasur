@@ -1,15 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function Gallery() {
     const projects = [
-        { id: 1, src: "/gallery-1.jpg", cat: "Balcón" },
-        { id: 2, src: "/gallery-2.jpg", cat: "Terraza" },
-        { id: 3, src: "/gallery-3.jpg", cat: "Ventana" },
-        { id: 4, src: "/gallery-4.jpg", cat: "Estructura" },
-        { id: 5, src: "/gallery-5.jpg", cat: "Mascotas" },
-        { id: 6, src: "/gallery-6.jpg", cat: "Seguridad" },
+        { id: 1, src: "/gallery-1.jpg", cat: "Balcón", alt: "Red de protección instalada en balcón en Madrid" },
+        { id: 2, src: "/gallery-2.jpg", cat: "Terraza", alt: "Malla de seguridad para terraza en Madrid" },
+        { id: 3, src: "/gallery-3.jpg", cat: "Ventana", alt: "Red de seguridad instalada en ventana en Madrid" },
+        { id: 4, src: "/gallery-4.jpg", cat: "Estructura", alt: "Estructura con red de protección de alta resistencia" },
+        { id: 5, src: "/gallery-5.jpg", cat: "Mascotas", alt: "Red de protección para gatos en balcón en Madrid" },
+        { id: 6, src: "/gallery-6.jpg", cat: "Seguridad", alt: "Instalación de red de seguridad certificada en Madrid" },
     ];
 
     return (
@@ -34,10 +35,13 @@ export function Gallery() {
                             viewport={{ once: true }}
                             className="relative aspect-square group overflow-hidden rounded-xl bg-slate-200"
                         >
-                            <div
-                                className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                style={{ backgroundImage: `url(${project.src})` }}
-                                aria-label={`Proyecto de red de protección en ${project.cat}`}
+                            <Image
+                                src={project.src}
+                                alt={project.alt}
+                                fill
+                                loading="lazy"
+                                sizes="(max-width: 768px) 50vw, 33vw"
+                                className="object-cover transition-transform duration-700 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                                 <span className="text-white font-bold text-lg">{project.cat}</span>
