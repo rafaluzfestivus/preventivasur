@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
 
 const BASE    = process.env.CHATWOOT_BASE_URL ?? "https://chat.preventivacentro.es";
 const ACCOUNT = Number(process.env.CHATWOOT_ACCOUNT_ID ?? "1");
@@ -25,26 +24,6 @@ export async function POST(req: NextRequest) {
         const { nombre, telefono, email, codigoPostal, servicio, mensaje } = await req.json();
 
         const phone = toE164(telefono);
-
-        // Save lead to Supabase (company_id=1 = Preventiva Centro)
-        if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
-            const supabase = createClient(
-                process.env.NEXT_PUBLIC_SUPABASE_URL,
-                process.env.SUPABASE_SERVICE_ROLE_KEY,
-            );
-            const digits = phone.replace(/\D/g, "");
-            await supabase.from("clients").upsert({
-                name: nombre,
-                whatsapp: digits,
-                email: email || null,
-                postal_code: codigoPostal || null,
-                service_requested: servicio || null,
-                message: mensaje || null,
-                source: "site",
-                status: "lead",
-                company_id: 1,
-            }, { onConflict: "whatsapp" });
-        }
 
         // Create contact in Chatwoot
         const contactRes = await fetch(`${BASE}/api/v1/accounts/${ACCOUNT}/contacts`, {

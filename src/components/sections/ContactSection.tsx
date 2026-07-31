@@ -48,29 +48,6 @@ export function ContactSection() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        const now = new Date();
-        const formattedDate = `${now.getDate().toString().padStart(2, '0')}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getFullYear()} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
-
-        const web3data = {
-            access_key: "26e44386-5cd3-4c4b-a373-01d28e40d700",
-            Nombre: formData.nombre,
-            Teléfono: formData.telefono,
-            Email: formData.email,
-            "Código Postal": formData.codigoPostal,
-            Servicio: formData.servicio,
-            Mensaje: formData.mensaje,
-            subject: "Nuevo mensaje desde Preventiva Centro"
-        };
-
-        const sheetsData = new URLSearchParams();
-        sheetsData.append("telefono", formData.telefono);
-        sheetsData.append("fonte", "site");
-        sheetsData.append("Nombre", formData.nombre);
-        sheetsData.append("email", formData.email);
-        sheetsData.append("cod_postal", formData.codigoPostal);
-        sheetsData.append("enviado_dt_hr", formattedDate);
-        sheetsData.append("Mensaje", `[${formData.servicio}] ${formData.mensaje}`);
-
         // Show success instantly — all sends happen in background
         fireGoogleAdsConversion();
         setStatus("success");
@@ -83,27 +60,8 @@ export function ContactSection() {
             mensaje: ""
         });
 
-        // Fire all destinations in background — no await, no blocking
-        fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify(web3data),
-        }).catch(err => console.error("Web3Forms error:", err));
-
-        // Saves lead to Supabase (service role, server-side) and creates contact/conversation no Chatwoot
-        fetch("/api/chatwoot", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                nombre: formData.nombre,
-                telefono: formData.telefono,
-                email: formData.email,
-                codigoPostal: formData.codigoPostal,
-                servicio: formData.servicio,
-                mensaje: formData.mensaje,
-            }),
-        }).catch(err => console.error("Chatwoot route error:", err));
-
+        // Fire both destinations in background — no await, no blocking
+        // Painel /api/leads is the single source of truth for the client record (CRM)
         fetch("https://painel.preventivacentro.es/api/leads", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -118,12 +76,19 @@ export function ContactSection() {
             }),
         }).catch(err => console.error("Painel leads error:", err));
 
-        fetch("https://script.google.com/macros/s/AKfycbzQcpR7ORaX81o9dfM5vcpo3PHM9S-irh9OweviOgwAeZ7-4V0WYGCRG_AN-EZSQj6g/exec", {
+        // Creates contact/conversation in Chatwoot for live follow-up
+        fetch("/api/chatwoot", {
             method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: sheetsData.toString(),
-        }).catch(err => console.error("Sheets error:", err));
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                nombre: formData.nombre,
+                telefono: formData.telefono,
+                email: formData.email,
+                codigoPostal: formData.codigoPostal,
+                servicio: formData.servicio,
+                mensaje: formData.mensaje,
+            }),
+        }).catch(err => console.error("Chatwoot route error:", err));
     };
 
     return (
