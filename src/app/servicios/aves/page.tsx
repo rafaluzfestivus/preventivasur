@@ -80,7 +80,7 @@ export default function AvesPage() {
                         <div>
                             <h2 className="text-3xl font-bold text-slate-900 mb-6">El fin de las palomas en tu balcón</h2>
                             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                                Em Madrid, o problema das pombas é quase uma praga urbana, especialmente nos prédios mais antigos. O cliente aqui está desesperado porque já tentou de tudo (espetos, corujas de plástico, CD pendurado) e nada funcionou.
+                                En Madrid, el problema de las palomas es casi una plaga urbana, especialmente en los edificios más antiguos. El cliente suele llegar desesperado porque ya lo ha probado todo (pinchos, búhos de plástico, CDs colgados) y nada ha funcionado.
                             </p>
                             <p className="text-lg text-slate-600 mb-8 leading-relaxed font-semibold italic">
                                 "Nuestras redes crean un bloqueo físico que impide que las palomas aniden o se posen de forma definitiva."
@@ -90,7 +90,7 @@ export default function AvesPage() {
                                     <CheckCircle className="w-5 h-5" /> Higiene y Limpieza
                                 </h4>
                                 <p className="text-sm text-slate-700">
-                                    Al instalar nuestras redes, mantendrás tus equipos de aire acondicionado y ventanas limpios por mucho más tempo. Es la solución más ética y eficaz.
+                                    Al instalar nuestras redes, mantendrás tus equipos de aire acondicionado y ventanas limpios por mucho más tiempo. Es la solución más ética y eficaz.
                                 </p>
                             </div>
                         </div>
@@ -128,7 +128,7 @@ export default function AvesPage() {
                         <div className="relative z-10">
                             <h2 className="text-4xl md:text-6xl font-bold mb-8 italic">¿Harto de las palomas?</h2>
                             <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto">
-                                Presupuesto sin compromiso para comunidades y particulares. Acaba hoy con o problema das palomas.
+                                Presupuesto sin compromiso para comunidades y particulares. Acaba hoy con el problema de las palomas.
                             </p>
                             <Link
                                 href="https://wa.me/34637003793"
