@@ -30,7 +30,7 @@ export default function CertificacionesContent() {
     ];
 
     return (
-        <div className="pt-24 min-h-screen bg-white">
+        <main className="pt-24 min-h-screen bg-white">
             {/* Hero Section */}
             <section className="bg-[#4d2a36] py-20 text-white relative overflow-hidden">
                 <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -138,6 +138,6 @@ export default function CertificacionesContent() {
                     </div>
                 </div>
             </section>
-        </div>
+        </main>
     );
 }

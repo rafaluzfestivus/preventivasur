@@ -51,7 +51,7 @@ export default function ProteccionContent() {
     };
 
     return (
-        <div className="pt-20 min-h-screen bg-white text-slate-900">
+        <main className="pt-20 min-h-screen bg-white text-slate-900">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -359,6 +359,6 @@ export default function ProteccionContent() {
                     </div>
                 </div>
             </section>
-        </div>
+        </main>
     );
 }
