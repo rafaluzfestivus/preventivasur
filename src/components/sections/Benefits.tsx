@@ -2,6 +2,7 @@
 
 import { CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function Benefits() {
     const benefits = [
@@ -42,8 +43,15 @@ export function Benefits() {
 
                     <div className="lg:w-1/2 relative">
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                            <div className="aspect-[4/3] bg-slate-200">
-                                <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1510563800743-aed236490d08?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center" />
+                            <div className="aspect-[4/3] bg-slate-200 relative">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1510563800743-aed236490d08?q=80&w=2670&auto=format&fit=crop"
+                                    alt="Gato asomado con seguridad gracias a una red de protección"
+                                    fill
+                                    loading="lazy"
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                    className="object-cover"
+                                />
                             </div>
                         </div>
                         <motion.div

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
@@ -8,10 +8,16 @@ import { CookieConsent } from "@/components/layout/CookieConsent";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#4d2a36",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://preventivacentro.es"),
-  title: "Instalación de Redes de Protección en Madrid | Preventiva Centro",
-  description: "Especialistas en instalación de redes de protección para balcones, ventanas y terrazas en Madrid y alrededores. Resistencia de 150kg/m² y 3 años de garantía.",
+  title: "Redes de Protección en Madrid | Preventiva Centro",
+  description: "Instalación de redes de protección para balcones, ventanas y terrazas en Madrid. Resistencia 150 kg/m², 3 años de garantía y presupuesto gratis en 24h.",
   keywords: ["redes de protección madrid", "mallas de seguridad madrid", "redes para balcones madrid", "redes para gatos madrid", "seguridad infantil ventanas", "instalación redes madrid", "mallas anticaídas", "protección terrazas", "Preventiva Centro", "precio redes protección", "presupuesto mallas seguridad", "instaladores redes madrid"],
   authors: [{ name: "Preventiva Centro", url: "https://preventivacentro.es" }],
   creator: "Preventiva Centro",
@@ -25,23 +31,23 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     url: "https://preventivacentro.es",
-    title: "Preventiva Centro | Redes de Protección en Madrid",
+    title: "Redes de Protección en Madrid | Preventiva Centro",
     description: "Instalación profesional de redes de protección y mallas de seguridad en Madrid. Protege a tus seres queridos sin sacrificar la estética.",
     siteName: "Preventiva Centro",
     images: [
       {
-        url: "https://preventivacentro.es/logo-preventiva-centro.png",
-        width: 800,
-        height: 600,
-        alt: "Logo Preventiva Centro",
+        url: "https://preventivacentro.es/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Instalación de redes de protección en Madrid - Preventiva Centro",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Preventiva Centro | Redes de Protección en Madrid",
-    description: "Instalación profesional de redes de protección y mallas de seguridad en Madrid.",
-    images: ["https://preventivacentro.es/logo-preventiva-centro.png"],
+    title: "Redes de Protección en Madrid | Preventiva Centro",
+    description: "Instalación profesional de redes de protección y mallas de seguridad en Madrid. Presupuesto gratis en 24h.",
+    images: ["https://preventivacentro.es/og-image.jpg"],
   },
   alternates: {
     canonical: "https://preventivacentro.es",
@@ -75,19 +81,82 @@ export default function RootLayout({
   const businessJsonLd = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
+    "@id": "https://preventivacentro.es/#business",
     "name": "Preventiva Centro",
-    "image": "https://preventivacentro.es/logo-preventiva-centro.png",
+    "image": "https://preventivacentro.es/og-image.jpg",
+    "logo": "https://preventivacentro.es/logo-preventiva-centro.png",
     "description": "Especialistas en instalación de redes de protección y mallas de seguridad para balcones, ventanas y terrazas en Madrid.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Madrid",
-      "addressRegion": "Madrid",
+      "addressRegion": "Comunidad de Madrid",
       "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 40.4168,
+      "longitude": -3.7038
     },
     "url": "https://preventivacentro.es",
     "telephone": "+34637003793",
     "email": "contacto@preventivacentro.es",
-    "priceRange": "$$",
+    "priceRange": "€€",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+34637003793",
+      "contactType": "customer service",
+      "availableLanguage": ["Spanish"],
+      "areaServed": "ES"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de redes de protección",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Redes de protección para gatos",
+            "description": "Mallas anti-caídas para gatos en balcones, ventanas y terrazas.",
+            "url": "https://preventivacentro.es/servicios/gatos"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Redes de seguridad infantil",
+            "description": "Protección certificada para niños en ventanas, balcones y escaleras.",
+            "url": "https://preventivacentro.es/servicios/ninos"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Control de aves y redes anti-palomas",
+            "description": "Redes que impiden el acceso de palomas a balcones, terrazas y patios.",
+            "url": "https://preventivacentro.es/servicios/aves"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mallas para terrazas y balcones",
+            "description": "Seguridad para terrazas y balcones sin impacto visual."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Redes deportivas y para piscinas",
+            "description": "Redes de protección para instalaciones deportivas y piscinas."
+          }
+        }
+      ]
+    },
     "areaServed": [
       "Madrid",
       "Móstoles",
