@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Shield, Facebook, Instagram, Phone, Mail, MapPin } from "lucide-react";
+import { ProtectedEmail } from "@/components/ProtectedEmail";
 
 export function Footer() {
     return (
@@ -75,7 +76,7 @@ export function Footer() {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 text-yellow-400 shrink-0" />
-                                <span>contacto@preventivacentro.es</span>
+                                <ProtectedEmail user="contacto" domain="preventivacentro.es" />
                             </li>
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 text-yellow-400 shrink-0" />
