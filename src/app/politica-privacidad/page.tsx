@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { ProtectedEmail } from '@/components/ProtectedEmail';
 
 export const metadata: Metadata = {
     title: 'Política de Privacidad | Preventiva Centro',
@@ -18,7 +19,7 @@ export default function PrivacyPolicy() {
                 <h2 className="text-2xl font-bold mt-8 mb-4 text-slate-900">1. Responsable del Tratamiento</h2>
                 <p>
                     Los datos personales recabados a través de este sitio web son responsabilidad de Preventiva Centro.<br />
-                    <strong>Correo electrónico de contacto:</strong> contacto@preventivacentro.es<br />
+                    <strong>Correo electrónico de contacto:</strong> <ProtectedEmail user="contacto" domain="preventivacentro.es" /><br />
                     <strong>Teléfono:</strong> 637 003 793<br />
                     Ubicación: España (Prestamos servicio en toda la Península).
                 </p>
@@ -57,7 +58,7 @@ export default function PrivacyPolicy() {
                     <li>Portabilidad de sus datos.</li>
                 </ul>
                 <p className="mt-4">
-                    Para ejercer estos derechos, puede enviar un correo electrónico a <strong>contacto@preventivacentro.es</strong> indicando el derecho que desea ejercer.
+                    Para ejercer estos derechos, puede enviar un correo electrónico a <strong><ProtectedEmail user="contacto" domain="preventivacentro.es" /></strong> indicando el derecho que desea ejercer.
                 </p>
 
                 <h2 className="text-2xl font-bold mt-8 mb-4 text-slate-900">6. Seguridad de los Datos</h2>

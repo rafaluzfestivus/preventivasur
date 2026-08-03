@@ -2,6 +2,7 @@
 
 import { Phone, Mail, MapPin, Send, Loader2, CheckCircle, XCircle } from "lucide-react";
 import { useState } from "react";
+import { ProtectedEmail } from "@/components/ProtectedEmail";
 
 function fireGoogleAdsConversion() {
     const conversionLabel = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL;
@@ -131,9 +132,7 @@ export function ContactSection() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-xl mb-1">Escríbenos</h3>
-                                    <a href="mailto:contacto@preventivacentro.es" className="text-slate-300 hover:text-white transition-colors text-lg">
-                                        contacto@preventivacentro.es
-                                    </a>
+                                    <ProtectedEmail user="contacto" domain="preventivacentro.es" className="text-slate-300 hover:text-white transition-colors text-lg" />
                                 </div>
                             </div>
 
