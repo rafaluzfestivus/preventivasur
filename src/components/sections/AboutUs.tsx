@@ -24,7 +24,7 @@ export function AboutUs() {
 
                     <div className="prose prose-lg max-w-none text-slate-600 leading-relaxed space-y-6">
                         <p className="text-xl font-medium text-slate-800">
-                            Después de Preventiva Norte (Norte de Portugal y galicia) y Preventiva Sur (Andalucia) ha llegado Preventiva Centro para cubrir las necesidades de la comunidad de Madrid y alrededores.
+                            Después de Preventiva Norte (Norte de Portugal y galicia), Preventiva Sur (Andalucia) y Preventiva Centro (comunidad de Madrid) ha llegado Preventiva Este para cubrir las necesidades de Barcelona y alrededores.
                         </p>
                         <p>
                             Preventiva Norte Redes de Proteccion, que actualmente es la principal empresa en el Norte de Portugal de instalación y venta de kits de redes de protección. Fue creada para cubrir las necesidades de personas que conviven con riesgos de accidentes en el hogar u otros ámbitos que exigen acciones para garantizar la protección de la vida y la integridad física, sobretodo de niños y mascotas, por el peligro de caídas a través de las ventanas, balcones, terrazas, escaleras, aperturas, elevaciones…
@@ -34,10 +34,14 @@ export function AboutUs() {
                         </p>
                     </div>
 
-                    <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 text-center">
                             <h3 className="text-3xl font-bold text-[#4d2a36] mb-2">Madrid</h3>
                             <p className="text-slate-500 font-medium">Preventiva Centro</p>
+                        </div>
+                        <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 text-center">
+                            <h3 className="text-3xl font-bold text-[#4d2a36] mb-2">Barcelona</h3>
+                            <p className="text-slate-500 font-medium">Preventiva Este</p>
                         </div>
                         <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 text-center">
                             <h3 className="text-3xl font-bold text-[#4d2a36] mb-2">Galicia</h3>

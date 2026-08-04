@@ -29,6 +29,15 @@ function trackPhoneClick(number: string) {
     }
 }
 
+function trackWhatsAppClick() {
+    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'whatsapp_click', { 'event_category': 'contact' });
+    }
+    if (typeof window !== 'undefined' && Array.isArray((window as any).dataLayer)) {
+        (window as any).dataLayer.push({ 'event': 'whatsapp_click' });
+    }
+}
+
 export function ContactSection() {
     const [formData, setFormData] = useState({
         nombre: "",
@@ -121,6 +130,15 @@ export function ContactSection() {
                                         </a>
                                         <a href="tel:+34912096117" onClick={() => trackPhoneClick('+34912096117')} className="text-slate-300 hover:text-white transition-colors text-lg">
                                             Fijo: 91 209 61 17
+                                        </a>
+                                        <a
+                                            href="https://wa.me/34637003793"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={trackWhatsAppClick}
+                                            className="text-slate-300 hover:text-white transition-colors text-lg"
+                                        >
+                                            WhatsApp: 637 003 793
                                         </a>
                                     </div>
                                 </div>

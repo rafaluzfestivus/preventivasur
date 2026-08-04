@@ -17,7 +17,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://preventivacentro.es"),
   title: "Redes de Protección en Madrid | Preventiva Centro",
-  description: "Instalación de redes de protección para balcones, ventanas y terrazas en Madrid. Resistencia 150 kg/m², 3 años de garantía y presupuesto gratis en 24h.",
+  description: "Instalación de redes de protección para balcones, ventanas y terrazas en Madrid. Resistencia 150 kg/m², 2 años de garantía y presupuesto gratis en 24h.",
   keywords: ["redes de protección madrid", "mallas de seguridad madrid", "redes para balcones madrid", "redes para gatos madrid", "seguridad infantil ventanas", "instalación redes madrid", "mallas anticaídas", "protección terrazas", "Preventiva Centro", "precio redes protección", "presupuesto mallas seguridad", "instaladores redes madrid"],
   authors: [{ name: "Preventiva Centro", url: "https://preventivacentro.es" }],
   creator: "Preventiva Centro",
@@ -208,7 +208,7 @@ export default function RootLayout({
         "name": "¿Qué garantía tienen las redes de protección?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Nuestras redes incluyen 3 años de garantía. Utilizamos materiales de alta resistencia certificados con una carga de 150 kg/m²."
+          "text": "Nuestras redes incluyen 2 años de garantía. Utilizamos materiales de alta resistencia certificados con una carga de 150 kg/m²."
         }
       },
       {
